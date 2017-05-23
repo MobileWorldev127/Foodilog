@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_c93a2bb2a0072fa76f5a36df3b49019e7d63fe23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/Foodilog/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b319ff9834bbeb9be394687614eb86892699ea14">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/Foodilog-react-native-vector-icons-unspecified_2fc4b98261e6122caa80057a8920705efb6d5dc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d5cbc9214ee567ea6ef56fb2707d48e58d240fc2">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.22.1_3f94a3353c5d5144de5037b9e77bd0fabec00a40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/Foodilog/react-native-fbsdk/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ac6965f038f9100d9814b3456ca35f2fd50e559f">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/Foodilog-react-native-fbsdk-unspecified_cff75ff4c8880bbef5fcce0b519f9b540301b2dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_0701740cd5d53d28f7c07ffa2fe1f272702d8632.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_a4b62bdcdf54f8d2738e29a74048025f573d889d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_bdaac6a61c24aa3676f9f00d72042e6255a8182f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_faea972cf93705156a6a05f2a9c41b04dd3d6289.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_52db711346cf86b0a7339e1a0f040c0022c63fb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_c94b5d4e1b0f5a6fe3c8b6bf1a5aa897e159eacc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_53564648fe93ff9300abb9085b333a87693d8e03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_822cc5aab6f8ab0bbec39c5747255bac9998a89e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_187d9861cd6909fc0ed5f01b7fa829e285dd07d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_7912dce451f47c6899b028520d3007ea4ecc05f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_c8f5ea9460d0fc220aa28e16f74bb898c6afee01.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_4e5fffccc7d3513ceeb61f76f7463690bdd91cdf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.0.1_ecaa62cf5dbf31c9c0d5d6235d3711fcaa3ef871.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_1ebc3eaf8d196acd84cbb8167e19afa657149162.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_906c5379d8c714b93b5bcfaf2b0bfd2c9342ebd7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_e066a565d721524cf56a6ee7f3dcf13638725004.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_84819618cb3597af2264dc59d1ea2f51a8095346.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_4e42ea6f137f6717b39c8ccab686b3987484e412.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_ee9c6fd556e8d1647f00a2f25211dc2059e9f5a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_6b686da4effcb30076ea2ea4d206ae97360817ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.0.1_743c9158f0a1788dbaad94872a9136c14bf11726.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/Foodilog/react-native-splash-screen/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="42a9c4bbafd1cb478e1a8f540fc3609c83745df8">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/Foodilog-react-native-splash-screen-unspecified_816d191e29d590e5159bd0a4a4c4e9cc591687e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_12a0b8c5aaff106044f80e12c609831895162d44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_46de135467ba31fb0ebb2fa4bbae4e84bdfdb6b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_ad65c1679198406257824c027b062f10014a105e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_4e305d2e6a54aced5cd915f0d0092a0b04575aeb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_beb322131b26bc60ac254da26174ff0c5b965136.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_561045967a48aed67b030d871c36f7588cab92c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_d30b2a143ed8e48a8017bf422d39d0fdbf56747f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.0.1_4f7012e97900b3215f294e9a79ead8c410092823.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.43.4/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5_409a0b8aa9d676aee34cf5a2665618e3335ab020.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.43.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="28964a93b5eafbe660a5b51e5964d2e66aa45395">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.43.4_10750bd20e1a0973a4844902a59ce6549cb57018.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.0.0_d4cd2864fa3dce20b24176831738a2afab42eff8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_56bf2c9ede9858f71199e0865f7656cab8cbc170.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-25.0.0_5f0fea1d6c890d791a32cdfcb52ac6322f93a67b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-10.0.1_104ca334c1c6d6ed243db4755b7dc82bd6b40d29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_f891ac4b772e1559f10b220a0c39ec83a80702e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_ad1822d206f2d6d8954708a3e9ec9d1f25abd667.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/Foodilog/react-native-maps/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dfe415137a847f99a59cee27485aea5dedd9b09c">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/Foodilog-react-native-maps-unspecified_77583fc899f6a202f6070200fbbfc51506453405.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_53fd94483446c89dece0487cdb82da77c292fde7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_8f2edf7cb21f29342ebfe3b587acfae6672abc7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/macos/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_e225c59da30b50f5979d85fdc668d7c945ed8049.jar" />
+    </item>
+
+</items>
