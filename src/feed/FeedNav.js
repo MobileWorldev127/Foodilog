@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Navigator, Text, ListView, View, StyleSheet, StatusBar,Dimensions, 
-  Image,Button, TouchableHighlight,Alert, TouchableOpacity, ScrollView, AsyncStorage} from 'react-native'
+  Image,Button, TouchableHighlight, TouchableOpacity, ScrollView, AsyncStorage} from 'react-native'
+import API from '../service/API'
 import FeedRow from '../cell/FeedRow'
 
 const{width, height} = Dimensions.get('window');
@@ -42,7 +43,7 @@ class FeedNav extends React.Component {
     AsyncStorage.getItem('FoodilogToken')
         .then( (value) => { 
             if(value){
-                var REQUEST_URL = 'http://api2.foodilog.com:80/v1/floglist/user/friends?token=' + value + '&limit=100'
+                var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL + 'friends?token=' + value + '&limit=100'
                 fetch(REQUEST_URL,{
                     method: 'GET',
                     headers: {
@@ -52,11 +53,11 @@ class FeedNav extends React.Component {
                 })
                 .then((response) => response.json())
                 .then((responseData) => {
-                    console.log(responseData.logs)
+                    console.log('FeedNav list')
+                    console.log('responseData')
                     ok = responseData.ok;
                     if(ok){
                         feedLogs = responseData.logs;
-                        console.log(feedLogs)
                         const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 != r2});
                         this.setState({
                             dataSource:ds.cloneWithRows(feedLogs)
@@ -69,8 +70,8 @@ class FeedNav extends React.Component {
                 })   
             } 
         });
-      AsyncStorage.getItem('FoodilogUserID').then((uid)=>{
-        var REQUEST_URL = 'http://api2.foodilog.com:80/v1/follow/list?token=' + uid
+      AsyncStorage.getItem('FoodilogToken').then((uid)=>{
+        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.FOLLOW_URL + '?token=' + uid
         fetch(REQUEST_URL, {
             method: 'GET',
             headers: { 
@@ -80,7 +81,8 @@ class FeedNav extends React.Component {
         })
         .then((response) => response.json())
         .then((responseData) => {
-            console.log(responseData);
+            console.log('Discover People')
+            console.log(responseData)
             if(responseData.ok == true){
                 if(responseData.users.length>0){
                     isDiscoverViewHidden = true

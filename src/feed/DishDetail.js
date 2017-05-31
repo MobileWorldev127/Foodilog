@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Navigator, Dimensions, Image, TouchableOpacity, AsyncStorage, ScrollView, ListView, } from 'react-native';
 import FLFaceView from '../cell/FLFaceView'
 import FeedRow from '../cell/FeedRow'
+import API from '../service/API'
 
 var feedLogs = [{'name':1},{'name':1},{'name':1}];
 const {width, height} = Dimensions.get('window')
@@ -29,7 +30,7 @@ class DishDetail extends Component {
         
         //getDishDetail
         AsyncStorage.getItem('FoodilogToken').then((value) => {
-            var REQUEST_URL1 = 'http://api2.foodilog.com:80/v1/dish/' + dishID + '?token=' +value
+            var REQUEST_URL1 = API.SERVER_URL + API.SERVICE_PORT + API.GET_DISH_URL + dishID + '?token=' +value
             fetch(REQUEST_URL1, {
                 method: 'GET',
                 headers: { 
@@ -59,7 +60,7 @@ class DishDetail extends Component {
         });
         //getDishLogList
         AsyncStorage.getItem('FoodilogToken').then((value) => {
-            var REQUEST_URL2 = 'http://api2.foodilog.com:80/v1/floglist/dish/' + dishID + '?token=' + value + '?limit=100'
+            var REQUEST_URL2 = API.SERVER_URL + API.SERVICE_PORT + API.GET_DISH_LOGLIST_URL + dishID + '?token=' + value + '?limit=100'
             fetch(REQUEST_URL2, {
                 method: 'GET',
                 headers: { 
@@ -109,7 +110,7 @@ class DishDetail extends Component {
     }
 
     render() {
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.state.dish.photoId + 'S'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.state.dish.photoId + 'S'
         return (
             <View style={styles.container}>
                 <View style = {styles.navview}>
@@ -118,59 +119,60 @@ class DishDetail extends Component {
                         <Image source = {require('../images/back.png')} style = {styles.backImage}/>
                     </TouchableOpacity>
                 </View>
-                <ScrollView>
-                    <View style = {styles.headview}>
-                        <TouchableOpacity onPress = {this._onPressDishCell} style = {styles.dishbutton}>
-                            <Image 
-                                source = {{uri:iconURL}} 
-                                style = {styles.bgImg}
-                                defaultSource = {require('../images/dish_default.png')}/>
-                            <View style = {{backgroundColor:'black', opacity:0.5, position:'absolute', width: width, height:120}}></View>
-                            <View style = {styles.emoji}>
-                                {this.faceView()}
+                <View style = {{flex:1,paddingBottom: 57}}>
+                    <ScrollView>
+                        <View style = {styles.headview}>
+                            <TouchableOpacity onPress = {this._onPressDishCell} style = {styles.dishbutton}>
+                                <Image 
+                                    source = {{uri:iconURL}} 
+                                    style = {styles.bgImg}
+                                    defaultSource = {require('../images/dish_default.png')}/>
+                                <View style = {{backgroundColor:'black', opacity:0.5, position:'absolute', width: width, height:120}}></View>
+                                <View style = {styles.emoji}>
+                                    {this.faceView()}
+                                </View>
+                            </TouchableOpacity>     
+                        </View>
+                        
+                        <TouchableOpacity style = {{padding:8, backgroundColor:'white'}}>
+                            <View>
+                                <View style = {{flexDirection:'row', alignItems:'center'}}>
+                                    <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
+                                    <Text style ={styles.txt}>{this.state.dish.restaurantName}</Text>
+                                </View>
+                                <View style = {{flexDirection:'row', alignItems:'center', marginTop: 5}}>
+                                    <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
+                                    <Text style ={styles.txt}>{this.state.dish.category}</Text>
+                                </View>
+                                <View style = {{flexDirection:'row', alignItems:'center', marginTop: 5}}>
+                                    <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
+                                    <Text style ={styles.txt}>${this.state.dish.price}</Text>
+                                </View>
                             </View>
                         </TouchableOpacity>
 
-                        
-                    </View>
-                    <TouchableOpacity style = {{padding:8, backgroundColor:'white'}}>
-                        <View>
-                            <View style = {{flexDirection:'row', alignItems:'center'}}>
-                                <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
-                                <Text style ={styles.txt}>{this.state.dish.restaurantName}</Text>
-                            </View>
-                            <View style = {{flexDirection:'row', alignItems:'center', marginTop: 5}}>
-                                <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
-                                <Text style ={styles.txt}>{this.state.dish.category}</Text>
-                            </View>
-                            <View style = {{flexDirection:'row', alignItems:'center', marginTop: 5}}>
-                                <Image source = {require('../images/type_dot.png')} style = {{width:5, height:5}}/>
-                                <Text style ={styles.txt}>${this.state.dish.price}</Text>
-                            </View>
+                        <View style = {styles.FeedView}>
+                            <Text style = {{color:'#555555', marginLeft: 10}}>LOGS</Text>
+                            <ListView
+                                dataSource = {this.state.dataSource}
+                                renderRow = {(data) => <FeedRow rowdata = {data} navigator = {this.props.navigator}/>}
+                                enableEmptySections = {true}/>
                         </View>
-                    </TouchableOpacity>
 
-                    <View style = {styles.FeedView}>
-                        <Text style = {{color:'#555555', marginLeft: 10}}>LOGS</Text>
-                        <ListView
-                            dataSource = {this.state.dataSource}
-                            renderRow = {(data) => <FeedRow rowdata = {data} navigator = {this.props.navigator}/>}
-                            enableEmptySections = {true}/>
+                    </ScrollView>
+
+                    <View style = {styles.menuView}>
+                        <TouchableOpacity onPress = {this._onPressAddLog} >
+                            <View style = {styles.buttonView}>
+                                <Text style = {{color:'#652D6C', fontSize:14}}>Add to log</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style = {styles.favoriteButton}>
+                            <Image source = {this.state.dish.favourate == true? require('../images/star_selected.png'):require('../images/star_unselected.png')} style = {styles.favoriteButton1}/>
+                        </TouchableOpacity>
                     </View>
-
-                </ScrollView>
-
-                <View style = {styles.menuView}>
-                    <TouchableOpacity onPress = {this._onPressAddLog} >
-                        <View style = {styles.buttonView}>
-                            <Text style = {{color:'#652D6C', fontSize:14}}>Add to log</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = {styles.favoriteButton}>
-                        <Image source = {this.state.dish.favourate == true? require('../images/star_selected.png'):require('../images/star_unselected.png')} style = {styles.favoriteButton1}/>
-                    </TouchableOpacity>
                 </View>
-
+                
 
             </View>
         );

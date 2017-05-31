@@ -8,6 +8,7 @@ import {StyleSheet,
     Navigator,
     Dimensions,
     AsyncStorage} from 'react-native';
+import API from '../service/API'
 
 const bg = require('../images/login_bg.png');
 const logo = require('../images/LOGO.png');
@@ -51,8 +52,8 @@ export default class LoginPage extends Component{
     }
 
     dispatchLogin(fbToken){
-        var REQUEST_URL = 'http://api2.foodilog.com:80/v1/login/facebook?access_token=' + fbToken
-         console.log(REQUEST_URL);
+        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.LOGIN_URL + '?access_token=' + fbToken
+        console.log(REQUEST_URL);
         fetch(REQUEST_URL,{
             method: 'GET',
             headers: {
@@ -83,11 +84,11 @@ export default class LoginPage extends Component{
                     alert('Login Failed, Token error');
                 }
                 if(userInfo.account){
-                    //AsyncStorage.setItem('FoodilogUserID', userInfo.account);
-                    // AsyncStorage.setItem('FoodilogToken', token);                  //We set the token as manually. We have to change this value after.
-                    AsyncStorage.setItem('FoodilogUserID', 'DMEGD7UCPGSEUCG5YRNH_G')
-                    AsyncStorage.setItem('FoodilogToken', '9RGMJ_8GMQS_UUS4BF_DPQ')
-                    console.log(userInfo.account);
+                    AsyncStorage.setItem('FoodilogUserID', userInfo.account);
+                    AsyncStorage.setItem('FoodilogToken', token);                  //We set the token as manually. We have to change this value after.
+                    // AsyncStorage.setItem('FoodilogUserID', 'DMEGD7UCPGSEUCG5YRNH_G')
+                    // AsyncStorage.setItem('FoodilogToken', '9RGMJ_8GMQS_UUS4BF_DPQ')
+                    console.log('FoodilogUserID ->' + userInfo.account);
                     console.log('FoodilogToken -> ' + token );
                 }else{
                     alert('Login Failed, ID error');
@@ -167,6 +168,8 @@ const styles = StyleSheet.create ({
         height: 40,
         bottom: 70,
         position:'absolute',
-    }
+    },
+
+
 
 })

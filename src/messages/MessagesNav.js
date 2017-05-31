@@ -3,10 +3,9 @@ import React, { Component } from 'react'
 import { Navigator, Text, View, StyleSheet, Dimensions, AsyncStorage, ActivityIndicator, ScrollView, TouchableHighlight, TouchableOpacity, ListView } from 'react-native'
 import {PullView} from 'react-native-pull';
 import MessageCell from '../cell/MessageCell'
-
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window')
-
 var fromId = '';
 var messageLogs = [];
 
@@ -37,7 +36,7 @@ class MessagesNav extends Component {
           dataSource: this.state.dataSource.cloneWithRows(messageLogs)
       })
       AsyncStorage.getItem('FoodilogToken').then((value) => {
-          var REQUEST_URL = 'http://api2.foodilog.com:80/v1/messages?token=' + value +'&fromId=' + fromId + '&limit=' + '100' 
+          var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_MESSAGES_URL + '?token=' + value +'&fromId=' + fromId + '&limit=' + '100'
           fetch(REQUEST_URL,{
               method: 'GET',
               headers: {
@@ -48,8 +47,6 @@ class MessagesNav extends Component {
           .then((response) => response.json())
           .then((responseData) => {
               if(responseData.ok == true){
-                  console.log('message')
-                  console.log(responseData)
                   messageLogs = responseData.messages
                   this.setState({
                       dataSource: this.state.dataSource.cloneWithRows(messageLogs)

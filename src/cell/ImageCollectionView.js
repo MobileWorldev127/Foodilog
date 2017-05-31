@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableHighlight, TouchableOpacity, AsyncStorage, Navigator, Image, ListView} from 'react-native';
 import GridView from 'react-native-gridview'
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window')
 var photos1 = [{'name':'view1'},{'name':'view1'}, {'name':'view1'}, {'name':'view1'}, {'name':'view1'}, {'name':'view1'}, {'name':'view1'}, {'name':'view1'}];
@@ -30,7 +31,8 @@ class ImageCollectionView extends Component {
     initPhotos(){
         photos = []
         for(var i = 0 ; i < Object.keys(this.props.data).length; i++){
-            REQUEST_URL = 'http://api2.foodilog.com:80/v1/resource/' + this.props.data[i] + 'L'
+            // REQUEST_URL = ':80/v1/resource/' + this.props.data[i] + 'L'
+            var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.data[i] + 'L'
             photos.push(REQUEST_URL)
         }
         this.setState({

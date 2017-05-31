@@ -1,10 +1,12 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight, TouchableOpacity, Navigator, AsyncStorage} from 'react-native';
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window');
-// create a component
 var isFollow = false;
+
+// create a component
 class DiscoverPeopleCell extends Component {
     constructor(props){
         super(props);
@@ -20,7 +22,6 @@ class DiscoverPeopleCell extends Component {
     }
     
     onPressDiscoverClicked = () =>{
-        alert(this.props.rowdata.id)
         this.props.navigator.push({
             name: 'userprofile',
             uid: this.props.rowdata.id,
@@ -31,7 +32,8 @@ class DiscoverPeopleCell extends Component {
         const isFollow = this.props.rowdata.isFollowed;
         const str_Follow = this.state.str_Follow;
         const str_Following = this.state.str_Following;
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.rowdata.id + 'S'
+        
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.id + 'S'
         return (
             <TouchableHighlight onPress = {this.onPressDiscoverClicked} >
                 <View style = {styles.wrapper}>

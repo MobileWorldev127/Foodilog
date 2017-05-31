@@ -4,30 +4,13 @@ import { View, Text, StyleSheet, Dimensions, ScrollView,  ListView, ActivityIndi
 import SearchRestaurantCell from '../cell/SearchRestaurantCell'
 import RestaurantDetail from './RestaurantDetail'
 import RestaurantInfo from '../Logic/Model/RestaurantInfo'
+import API from '../service/API'
 
 const {width, height} = Dimensions.get('window');
 
 var isLocationSearch = true
 
-var resturantList = [
-  {
-    id: "fsqi-4471bf9af964a5209c331fe3",
-    name: "Jack the Horse Tavern",
-    lat: "40.69993286239937",
-    lng: "-73.9936975351119",
-    formattedAddress: "66 Hicks St (at Cranberry)",
-    distance: "531",
-    tel: "123",
-    open: "123",
-    rating: "8.8",
-    hasMenu: true,
-    type: "American Restaurant",
-    priceTier: "3",
-    likes: "5638",
-    photoUrl: "https://irs1.4sqi.net/img/general/320x160/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg"
-  },
-
-];
+var resturantList = [];
 
 // create a component
 class RestaurantTableView extends Component {
@@ -38,6 +21,9 @@ class RestaurantTableView extends Component {
         this.state = {
             dataSource:ds.cloneWithRows(resturantList),
             isLocationSearch: true,
+            latitude: null,
+            longitude: null,
+            error: null,
         };
     }
 
@@ -45,15 +31,36 @@ class RestaurantTableView extends Component {
         this.getsearchRestaurantsCall();
     }
     getsearchRestaurantsCall(){
-        if(!isLocationSearch){
-            
-        }
-    }
-
-    _onPressCell = () => {
-        this.props.navigator.push({
-            name:"restaurantDetail"
-        });
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    error: null,
+                })
+                AsyncStorage.getItem('FoodilogToken').then((value) => {
+                    // var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + position.coords.latitude + ',' + position.coords.longitude + '&rank=distance' + '&token=' + value;
+                    var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + '37.33233141' + ',' + '-122.03121860' + '&rank=distance' + '&token=' + value;
+                    fetch(REQUEST_URL, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type' : 'application/json',
+                        },
+                    })
+                    .then((response) => response.json())
+                    .then((responseData) => {
+                        if(responseData.ok == true){
+                            this.setState({
+                                dataSource: this.state.dataSource.cloneWithRows(responseData.restaurants)
+                            })
+                        }
+                    })
+                })
+            },
+            (error) => this.setState({error: error.message}),
+            {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+        );
     }
 
     render() {
@@ -61,15 +68,14 @@ class RestaurantTableView extends Component {
             <View style={styles.container}>
                 <ListView
                     dataSource = {this.state.dataSource}
-                    renderRow = {(data) => <SearchRestaurantCell rowdata = {data} onPressClicked = {this._onPressCell}/>}
+                    renderRow = {(data) => <SearchRestaurantCell rowdata = {data} navigator = {this.props.navigator}/>}
                     renderFooter = {() => <View style = {{alignItems:'center', justifyContent:'center'}}><Text style = {{fontSize:13,color:'gray', marginTop:10}}>No more data...</Text></View>}
                     onEndReached = {() => <View style = {{height: 10, backgroundColor:'yellow'}}/>}
-                />
+                    enableEmptySections = {true}  />
             </View>
         );
     }
-
-    
+  
 }
 
 

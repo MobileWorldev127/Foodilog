@@ -4,6 +4,7 @@ import FLFaceView from '../cell/FLFaceView'
 import FeedDishCell from '../cell/FeedDishCell'
 import FeedCommentCell from '../cell/FeedCommentCell'
 import ImageCollectionView from '../cell/ImageCollectionView'
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window');
 var TimeAgo = require('react-native-timeago')
@@ -49,11 +50,9 @@ export default class FeedDetail extends Component {
         this.getLogCommentList()
     }
     getLogCommentList(){
-        // fid = this.props.logInfo.fid
         fid = this.props.fid
         AsyncStorage.getItem('FoodilogToken').then((value) => {
-            // func getLogDetailList(logInfo.id)
-            var REQUEST_URL1 = 'http://api2.foodilog.com:80/v1/flog/' + fid + '?token=' +value
+            var REQUEST_URL1 = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGDETAIL_URL + fid + '?token=' +value
             fetch(REQUEST_URL1, {
                 method: 'GET',
                 headers: { 
@@ -63,7 +62,6 @@ export default class FeedDetail extends Component {
             })
             .then((response) => response.json())
             .then((responseData) => {
-                console.log(responseData)
                 isFavorite = responseData.isFavourate
                 if(responseData.ok == true){
                     dishs = responseData.flog.dishs
@@ -79,7 +77,7 @@ export default class FeedDetail extends Component {
             })
 
             //func getLogCommentList(logInfo.id)
-            var REQUEST_URL2 = 'http://api2.foodilog.com:80/v1/flog/' + fid + '/comment?token=' +value
+            var REQUEST_URL2 = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGDETAIL_URL + fid + '/comment?token=' +value
             fetch(REQUEST_URL2, {
                 method: 'GET',
                 headers: {
@@ -142,7 +140,7 @@ export default class FeedDetail extends Component {
     }
 
     render() {
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.state.logInfo.uid + 'S'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.state.logInfo.uid + 'S'
         var utcSeconds = this.state.logInfo.timestamp
         var d = new Date(0)
         d.setUTCSeconds(utcSeconds)

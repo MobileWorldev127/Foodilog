@@ -28,6 +28,9 @@ import MyFavorites from './profile/MyFavorites'
 import LogDish from './feed/LogDish'
 import DishDetail from './feed/DishDetail'
 import MustTryView from './feed/MustTryView'
+import RestaurantList from './new/RestaurantList'
+import Dishes from './new/Dishes'
+import NLDishComment from './new/NLDishComment'
 
 var _navigation;
 
@@ -87,7 +90,9 @@ export default class  App extends Component{
                 );
             case 'menu':
                 return(
-                    <Menu navigator = {navigator}/>
+                    <Menu navigator = {navigator}
+                        rid = {route.rid}
+                        rname = {route.rname}/>
                 );
             case 'menuadd':
                 return(
@@ -145,7 +150,22 @@ export default class  App extends Component{
                 );
             case 'musttryview' :
                 return(
-                    <MustTryView navigator = {navigator} />
+                    <MustTryView navigator = {navigator} 
+                        rid = {route.rid}/>
+                );
+            case 'restaurantlist':
+                return(
+                    <RestaurantList navigator = {navigator} />
+                );
+            case 'dishes':
+                return(
+                    <Dishes navigator = {navigator}
+                        rid = {route.rid} />
+                );
+            case 'NLDishComment':
+                return(
+                    <NLDishComment navigator = {navigator}
+                        dishinfo = {route.dishinfo}/>
                 );
         }
     }

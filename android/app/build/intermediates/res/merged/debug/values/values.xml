@@ -565,8 +565,8 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <string name="facebook_app_id">1674923012803250</string>
-    <string name="fb_login_protocol_scheme">fb1674923012803250</string>
+    <string name="facebook_app_id">1414086688899105</string>
+    <string name="fb_login_protocol_scheme">fb1414086688899105</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>

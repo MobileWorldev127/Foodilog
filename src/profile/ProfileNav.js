@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react'
 import { Navigator, Text, StyleSheet, Dimensions, View, TouchableOpacity, Image, AsyncStorage} from 'react-native'
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window');
-
 
 class ProfileNav extends Component {
   constructor () {
@@ -52,8 +52,9 @@ class ProfileNav extends Component {
   }
 
   getProfile(){
-      AsyncStorage.getItem('FoodilogUserID').then((value) => {
-          var REQUEST_URL = 'http://api2.foodilog.com:80/v1/profile/me?token=' + value 
+      AsyncStorage.getItem('FoodilogToken').then((value) => {
+          var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_PROFILE_URL + 'me?token=' + value
+          console.log('Profile URL == ' + REQUEST_URL)
           fetch(REQUEST_URL,{
               method: 'GET',
               headers: {
@@ -64,6 +65,7 @@ class ProfileNav extends Component {
           .then((response) => response.json())
           .then((responseData) => {
               if(responseData.ok == true){
+                  console.log(responseData)
                  this.setState({
                      followers: responseData.followers,
                      followings:responseData.followings,
@@ -126,8 +128,8 @@ class ProfileNav extends Component {
   }
 
   render () {
-      var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.state.account + 'L'
-    return (
+      var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.state.account + 'L'
+      return (
         <View style = {styles.wrapper}>
             <View style = {styles.navview}>
                 <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>{this.state.name}</Text>
@@ -238,10 +240,9 @@ const styles = StyleSheet.create({
     headImageView:{
       width: 80,
       height: 80,
-      borderRadius: 40,      
-      borderColor: 'white',
+      borderRadius: 40,     
       borderWidth: 2,
-      resizeMode: 'contain',
+      borderColor:'white',
     },
     followView:{
       flexDirection:'row',

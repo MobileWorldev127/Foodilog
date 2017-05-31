@@ -26,8 +26,7 @@ class RestaurantNav extends Component {
                     <Search
                         ref = 'SearchBar'
                         placeholder ='  Search Locations  '
-                        searchIconCollapsedMargin = '63'
-                        placeholderCollapsedMargin = '53'
+                        
                         backgroundColor = 'transparent'
                         titleCancelColor = '#652D6C'
                     />
@@ -53,9 +52,7 @@ class RestaurantNav extends Component {
                   <View style = {{ height:40, position:'absolute', right:10, left: 90}}>
                     <Search
                         ref = 'SearchBar'
-                        placeholder = '  Search Restaurants  '
-                        searchIconCollapsedMargin = '70'
-                        placeholderCollapsedMargin = '60'
+                        placeholder = '  Search Restaurants  '  
                         backgroundColor = 'transparent'
                         titleCancelColor = '#652D6C'
                         onChangeText = {(text) => {

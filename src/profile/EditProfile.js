@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, TextInput, AsyncStorage} from 'react-native';
+import API from '../service/API'
 
 const {width, height} = Dimensions.get('window');
 // create a component
@@ -34,7 +35,7 @@ class EditProfile extends Component {
             alert('Location should not be empty')
         }
         AsyncStorage.getItem('FoodilogToken').then((value) => {
-            var REQUEST_URL = 'http://api2.foodilog.com:80/v1/user/me?name='+ this.state.name + '&area =' + this.state.location +'&about=' +this.state.description + '&token='+value
+            var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.UPDATE_MY_PROFILE + '?name=' + this.state.name + '&area =' + this.state.location +'&about=' +this.state.description + '&token='+value
             fetch(REQUEST_URL, {
                 method: 'post',
                 headers:{

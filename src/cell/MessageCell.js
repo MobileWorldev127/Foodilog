@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import { StyleSheet, Platform, Text, Dimensions, View, Image, TouchableOpacity, TouchableHighlight} from 'react-native'
+import API from '../service/API'
+
 var TimeAgo = require('react-native-timeago')
 const{width, height} = Dimensions.get('window');
 export default class MessageCell extends Component { 
@@ -23,9 +25,8 @@ export default class MessageCell extends Component {
     }
 
     render(){
-        console.log("message")
-        console.log(this.props.rowdata)
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.rowdata.senderId + 'S'
+
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.senderId + 'S'
         var tyepStr = '';
         var type = this.props.rowdata.type
         if(type == 'unknown'){

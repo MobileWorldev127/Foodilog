@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, Navigator, TouchableOpacity } from 'react-native';
+import API from '../service/API'
 import FLFaceView from '../cell/FLFaceView'
 import LogDish from '../feed/FeedDetail'
 
@@ -39,7 +40,7 @@ class FeedDishCell extends Component {
     }
 
     render() {
-        iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.rowdata.photoId + 'S'
+        iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.photoId + 'S'
         return (
             <TouchableOpacity onPress = {this._onPressDishCell}>
                 <View style={styles.container}>
@@ -88,8 +89,8 @@ const styles = StyleSheet.create({
         paddingRight: 27,
     },
     emoji:{
-        width: 20,
-        height: 20,
+        width: 22,
+        height: 22,
         position: 'absolute',
         top: 10,
         right: 10,

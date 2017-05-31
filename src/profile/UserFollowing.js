@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ListView, Navigator, AsyncStorage, Image, TouchableOpacity, Dimensions } from 'react-native';
 import DiscoverPeopleCell from '../cell/DiscoverPeopleCell'
+import API from '../service/API'
+
 const {width, height} = Dimensions.get('window')
 var userfollowingList = [];
 
@@ -22,7 +24,7 @@ class UserFollowing extends Component {
     getFollowingList(){
         userfollowingList = [];
         AsyncStorage.getItem('FoodilogToken').then((value) => {
-            var REQUEST_URL = 'http://api2.foodilog.com:80/v1/follow/list?token=' + value
+            var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_FOLLOW_URL + '?token=' + value
             fetch(REQUEST_URL, {
                 method:'GET',
                 headers: {

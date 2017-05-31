@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ListView, AsyncStorage } from 'react-native';
 import FeedRow from '../cell/FeedRow'
+import API from '../service/API'
+
 const{width, height} = Dimensions.get('window');
 var feedsList = [];
-
 var profileID = ''
 var foodilogToken = ''
 var REQUEST_URL = ''
@@ -41,9 +42,9 @@ class UserProfile extends Component {
 
         AsyncStorage.getItem('FoodilogUserID').then((value)=>{
             if(value == profileID){
-                REQUEST_URL = 'http://api2.foodilog.com:80/v1/floglist/user/me'
+                REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL + 'me'
             }else{
-                REQUEST_URL = 'http://api2.foodilog.com:80/v1/floglist/user/' + profileID
+                REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL + profileID
             }
         })
 
@@ -77,9 +78,9 @@ class UserProfile extends Component {
 
         AsyncStorage.getItem('FoodilogUserID').then((value)=>{ //get profile info
             if(value == profileID){
-                REFRESH_REQUEST_URL = 'http://api2.foodilog.com:80/v1/profile/me'
+                REFRESH_REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_PROFILE_URL + 'me'
             }else{
-                REFRESH_REQUEST_URL = 'http://api2.foodilog.com:80/v1/profile/' + profileID
+                REFRESH_REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_PROFILE_URL + profileID
             }
             REFRESH_REQUEST_URL = REFRESH_REQUEST_URL + '?token=' + REFRESH_REQUEST_URL
             fetch(REFRESH_REQUEST_URL, {
@@ -131,7 +132,7 @@ class UserProfile extends Component {
         this.props.navigator.pop();
     }
     render() {
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ profileID + 'L'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + profileID + 'L'
         const isFollow = this.state.isFollowed;
         const str_Follow = this.state.str_Follow;
         const str_Following = this.state.str_Following;

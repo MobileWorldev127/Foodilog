@@ -127,8 +127,7 @@ class RestaurantSearch extends Component {
 
     render() {
         const showMap = this.state.showMap;
-        const showFilter = this.state.showFilter;
-
+        const showFilter = this.state.showFilter; 
         if(!showMap){
             if (showFilter){
                 return (

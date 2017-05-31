@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, Image,} from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react-native';
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window');
 var dishURL = ''
@@ -9,11 +10,13 @@ var dishURL = ''
 class MustTryDishCell extends Component {
     photo(){
         if(this.props.rowdata.photoId){
+            dishURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.photoId + 'L'
+
             if(this.props.rowdata.photoId == null && this.props.rowdata.photoId == ''){
                 return(
                     <Image source = {require('../images/dish_default.png')} style = {styles.photo}/>
                 );
-            }else{
+            }else{ 
                 return(
                     <Image 
                         source = {{uri:dishURL}} 
@@ -40,18 +43,27 @@ class MustTryDishCell extends Component {
         }
     }
 
+    _onpressdish = () => {
+        this.props.navigator.push({
+            name:'dishdetail',
+            dishInfo: this.props.rowdata,
+        })
+    }
     render() {
-        dishURL = 'http://api2.foodilog.com:80/v1/resource/' + this.props.rowdata.photoId + 'L'
+
         return (
-            <View style={styles.container}>
-                {this.photo()}
-                <View style = {{flexDirection:'column', marginLeft: 10}}>
-                    <Text style = {styles.name} numberOfLines ={1}>{this.props.rowdata.name}</Text>
-                    <Text style = {styles.price} numberOfLines ={1}>${this.props.rowdata.price}</Text>
-                    {this.description()}
-                    
+            <TouchableOpacity onPress = {this._onpressdish}>
+                <View style={styles.container}>
+                    {this.photo()}
+                    <View style = {{flexDirection:'column', marginLeft: 10}}>
+                        <Text style = {styles.name} numberOfLines ={1}>{this.props.rowdata.name}</Text>
+                        <Text style = {styles.price} numberOfLines ={1}>${this.props.rowdata.price}</Text>
+                        {this.description()}
+                        
+                    </View>
+                    <View style = {{backgroundColor:'#EFEFF4', width: width, height:1, position:'absolute', left:0}}></View>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }

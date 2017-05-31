@@ -12,7 +12,6 @@ class NewNav extends Component {
             text: ''
         }
         this._onPressBack = this._onPressBack.bind(this);
-        
     }
 
     _onPressBack(){
@@ -27,7 +26,7 @@ class NewNav extends Component {
                         <Image source = {require('../images/back.png')} style = {styles.backImage}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress = {this._onPressDone} style = {styles.doneButton}>
-                        <Text style = {{color:'white', fontSize:13}}>Done</Text>
+                        <Text style = {{color:'white', fontSize:15}}>Done</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -70,14 +69,14 @@ class NewNav extends Component {
 
 
 const styles = StyleSheet.create({
-    constainer:{
+    container:{
         flex: 1,
         backgroundColor:'white',
     },
     navview:{
        backgroundColor: '#652D6C',
        width: width,
-       height: 40,
+       height: 50,
        justifyContent: 'center',
        alignItems: 'center',
        flexDirection: 'row',
@@ -100,28 +99,28 @@ const styles = StyleSheet.create({
     },
     body:{
         width: width,
-        height: 110,
         marginTop: 10,
+        backgroundColor: 'white',
     },
     photoButton:{
-        width:50,
-        height:50,
+        width:60,
+        height:60,
         position:'absolute',
         left: 10,
-        top: 36,
+        top: 30,
     },
     photo:{
-        width:50,
-        height:50,
+        width:60,
+        height:60,
     },
     textinput:{
-        width: width - 100,
+        width: width - 130,
         height: 28,
         borderColor:'lightgray',
         borderWidth: 1,
         borderRadius: 3,
         marginTop:10,
-        marginLeft: 70,
+        marginLeft: 80,
         paddingVertical: 0,
         paddingLeft: 7,
         fontSize: 12,
@@ -136,6 +135,7 @@ const styles = StyleSheet.create({
         paddingRight: 5,
         marginLeft: 15,
     },
+
 })
 
 //make this component available to the app

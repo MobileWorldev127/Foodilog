@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Navigator, Dimensions, TouchableOpacity,AsyncStorage, ListView } from 'react-native';
+import API from '../service/API'
 
 const {width, height} = Dimensions.get('window');
 var ok = false;
@@ -13,37 +14,38 @@ class GuideFollow extends Component {
 
     }
 
-    // componentWillMount(){
-    //     AsyncStorage.getItem('FoodilogToken')
-    //     .then( (value) => { 
-    //         if(value){
-    //             var REQUEST_URL = 'http://api2.foodilog.com:80/v1/?token=' + value
-    //             console.log(REQUEST_URL);
-    //             fetch(REQUEST_URL,{
-    //                 method: 'GET',
-    //                 headers: {
-    //                     'Accept' : 'application/json',
-    //                     'Content-Type' : 'application/json',
-    //                 }, 
-    //             })
-    //             .then((response) => response.json())
-    //             .then((responseData) => {
-    //                 ok = responseData.ok;
-    //                 if(ok){
-    //                     // users = responseData.users;
-    //                     // this.setState({users});
-    //                 }
-    //             }).catch((e) => {
-    //                 console.log(e)
-    //             })
-    //         } 
-    //     });   
-    // }
+    componentWillMount(){
+        AsyncStorage.getItem('FoodilogToken')
+        .then( (value) => { 
+            if(value){
+                var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_FOLLOWABLE_LIST + '?token=' + value
+                console.log(REQUEST_URL);
+                fetch(REQUEST_URL,{
+                    method: 'GET',
+                    headers: {
+                        'Accept' : 'application/json',
+                        'Content-Type' : 'application/json',
+                    }, 
+                })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    ok = responseData.ok;
+                    if(ok){
+                        // users = responseData.users;
+                        // this.setState({users});
+                    }
+                }).catch((e) => {
+                    console.log(e)
+                })
+            } 
+        });   
+    }
 
     _onPressDone = () => {
         this.props.navigator.push({
             name:'tabcontainer'
         })
+        
     }
 
     render() {

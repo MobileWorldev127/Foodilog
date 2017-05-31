@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TouchableHighlight, Dimensions, Navigator, ScrollView, TouchableOpacity, Slider, AsyncStorage, ListView } from 'react-native';
+import API from '../service/API'
 import FLFaceView from '../cell/FLFaceView'
 import MustTryDishCell from '../cell/MustTryDishCell'
 import FeedRow from '../cell/FeedRow'
@@ -28,75 +29,6 @@ export default class RestaurantDetail extends Component {
             logDataSource: ds.cloneWithRows(logDataSource),
         }
     }
-    renderImage2(){
-        if(this.state.slider2 == 1){
-            return(
-                <Image source = {require('../images/smile_5.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider2 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider2 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider2 >0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }
-    }
-    renderImage3(){
-        if(this.state.slider3 == 1){
-            return(
-                <Image source = {require('../images/smile_5.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider3 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider3 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider3 >0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }
-    }
-    renderImage4(){
-        if(this.state.slider4 == 1){
-            return(
-                <Image source = {require('../images/smile_5.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider4 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider4 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else if(this.state.slider4 >0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width: 30, height: 30, position:'absolute', right:25}}/>
-            );
-        }
-    }
 
     componentWillMount() {
         this.getData()
@@ -104,8 +36,7 @@ export default class RestaurantDetail extends Component {
     getData(){
         AsyncStorage.getItem('FoodilogToken').then((value) => {
             // func getLogCommentList(logInfo.id)
-            var REQUEST_URL1 = 'http://api2.foodilog.com:80/v1/restaurant/' + this.props.restaurantId + '?token=' +value
-
+            var REQUEST_URL1 = API.SERVER_URL + API.SERVICE_PORT + API.GET_RESTAURANT_URL + this.props.restaurantId + '?token=' +value
             fetch(REQUEST_URL1, {
                 method: 'GET',
                 headers: { 
@@ -115,7 +46,6 @@ export default class RestaurantDetail extends Component {
             })
             .then((response) => response.json())
             .then((responseData) => {
-                console.log('9876')
                 console.log(responseData)
                 RestaurantInfo.favourate = responseData.isFavourate
                 if(responseData.ok == true){
@@ -131,13 +61,15 @@ export default class RestaurantDetail extends Component {
                     RestaurantInfo.photoUrl = responseData.restaurant.photoUrl
                     RestaurantInfo.rating = responseData.restaurant.rating
                     RestaurantInfo.name = responseData.restaurant.name
+                    RestaurantInfo.id = responseData.restaurant.id
                     if(responseData.restaurant.hours){
                         RestaurantInfo.isOpen = responseData.restaurant.isOpen
                     }
                     RestaurantInfo.distance = responseData.restaurant.location.distance
-                    // {this.updateRestaurantDetailView()}
+
                     this.setState({
-                        RestaurantDetail:RestaurantDetail,
+                        // RestaurantDetail:RestaurantDetail,
+                        RestaurantInfo:RestaurantInfo
                     })
 
                 }
@@ -147,9 +79,10 @@ export default class RestaurantDetail extends Component {
             })
         })
 
+        //getMustTry
         AsyncStorage.getItem('FoodilogToken').then((value) =>{
             mustTryDataSource = []
-            var REQUEST_MUSTTRYURL = 'http://api2.foodilog.com:80/v1/musttry/' + this.props.restaurantId + '?token=' +value
+            var REQUEST_MUSTTRYURL =  API.SERVER_URL + API.SERVICE_PORT + API.MUST_TRY_URL + this.props.restaurantId + '?token=' +value
             fetch(REQUEST_MUSTTRYURL, {
                 method: 'GET',
                 headers: { 
@@ -171,7 +104,6 @@ export default class RestaurantDetail extends Component {
                             mustTryDataSource: this.state.mustTryDataSource.cloneWithRows(responseData.dishs)
                         })
                     }
-                    
                 }
             })
             .catch((e) =>{
@@ -179,10 +111,11 @@ export default class RestaurantDetail extends Component {
             })
         })
 
+        //getPhotos
         AsyncStorage.getItem('FoodilogToken').then((value) => {
             logDataSource = []
-            var REQUEST_LGOSURL = 'http://api2.foodilog.com:80/v1/floglist/restaurant/' + this.props.restaurantId + '?token=' + value + '&limit=2'
-            fetch(REQUEST_LGOSURL,{
+            var REQUEST_LOGSURL = API.SERVER_URL + API.SERVICE_PORT + API.GET_RESTAURANT_LOGLIST_URL + this.props.restaurantId + '?token=' + value + '&limit=2'
+            fetch(REQUEST_LOGSURL,{
                 method: 'GET',
                 headers: {
                     'Accept' : 'application/json',
@@ -201,29 +134,29 @@ export default class RestaurantDetail extends Component {
                 console.log(e)
             })
         })
-
-    }
-
-    updateRestaurantDetailView(){
-        
     }
 
     _onPressBack = () => {
         this.props.navigator.pop()
     }
     _onPressMoreDish = () => {
+        console.log('musttryview')
+        console.log(this.props.restaurantId)
         this.props.navigator.push({
-            name: 'musttryview'
+            name: 'musttryview',
+            rid:this.props.restaurantId,
         })
     }
     _onPressNewLog = () =>{
         this.props.navigator.push({
             name: "startnewlog"
         })
-    }
+    } 
     _onPressMenu = () => {
         this.props.navigator.push({
-            name:"menu"
+            name:"menu",
+            rid: this.state.RestaurantInfo.id,
+            rname: this.state.RestaurantInfo.name,
         })
     }
     show_type_priceTier(){
@@ -234,15 +167,15 @@ export default class RestaurantDetail extends Component {
                 );
             case 3:
                 return(
-                    <Text style = {styles.typeText}>$$$</Text>
+                    <Text style = {styles.typeText}>{this.state.RestaurantInfo.type + ' ($$$)'}</Text>
                 );
             case 4:
                 return (
-                    <Text style = {styles.typeText}>$$$$</Text>
+                    <Text style = {styles.typeText}>{this.state.RestaurantInfo.type + ' ($$$$)'}</Text>
                 );
             default:
                 return(
-                    <Text style = {styles.typeText}>$</Text>
+                    <Text style = {styles.typeText}>{this.state.RestaurantInfo.type + ' ($)'}</Text>
                 );
         }
     }
@@ -337,33 +270,42 @@ export default class RestaurantDetail extends Component {
 
                         <View style = {{padding:15}}>
                             <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 5}}>
-                                <Text style = {{color:'#555555', fontSize:15}}>Ambiance</Text>
-                                <Slider
+                                <Text style = {{color:'#555555', fontSize:15}}>Ambiance :</Text>
+                                {/*<Slider
                                     value={this.state.slider2}
                                     onValueChange={(value) => this.setState({slider2:value})} 
                                     style = {{width:width*2/3+10, position:'absolute', right:55 }}
-                                    maximumTrackTintColor = {'#652D6C'}/>
-                                {this.renderImage2()}
+                                    maximumTrackTintColor = {'#652D6C'}/>*/}
+                                <Text style = {styles.score}>75</Text>
+                                {/*<View style = {styles.sliderImage}>
+                                    <FLFaceView score = {this.state.slider2*100} type = 'big'/>
+                                </View>*/}
                             </View>
 
                             <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 15}}>
-                                <Text style = {{color:'#555555', fontSize:15}}>Service</Text>
-                                <Slider
+                                <Text style = {{color:'#555555', fontSize:15}}>Service :</Text>
+                                {/*<Slider
                                     value={this.state.slider3}
                                     onValueChange={(value) => this.setState({slider3: value})} 
                                     style = {{width:width*2/3+10, position:'absolute', right:55 }}
-                                    maximumTrackTintColor = {'#652D6C'}/>
-                                {this.renderImage3()}
+                                    maximumTrackTintColor = {'#652D6C'}/>*/}
+                                <Text style = {styles.score}>75</Text>
+                                {/*<View style = {styles.sliderImage}>
+                                    <FLFaceView score = {this.state.slider3*100} type = 'big'/>
+                                </View>*/}
                             </View>
 
                             <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 15}}>
-                                <Text style = {{color:'#555555', fontSize:15}}>Value</Text>
-                                <Slider
+                                <Text style = {{color:'#555555', fontSize:15}}>Value :</Text>
+                                {/*<Slider
                                     value={this.state.slider4}
                                     onValueChange={(value) => this.setState({slider4:value})} 
                                     style = {{width:width*2/3+10, position:'absolute', right:55 }}
-                                    maximumTrackTintColor = {'#652D6C'}/>
-                                {this.renderImage4()}
+                                    maximumTrackTintColor = {'#652D6C'}/>*/}
+                                <Text style = {styles.score}>75</Text>
+                                {/*<View style = {styles.sliderImage}>
+                                    <FLFaceView score = {this.state.slider4*100} type = 'big'/>
+                                </View>*/}
                             </View>
                         </View>
 
@@ -371,7 +313,7 @@ export default class RestaurantDetail extends Component {
                             <Text style = {{color:'#555555', backgroundColor:'transparent', fontSize:15, marginLeft:14}}> MUST TRY </Text>
                             <ListView
                                 dataSource = {this.state.mustTryDataSource}
-                                renderRow = {(data) => <MustTryDishCell rowdata = {data}/>}
+                                renderRow = {(data) => <MustTryDishCell rowdata = {data} navigator = {this.props.navigator}/>}
                                 enableEmptySections = {true}/>
                             <TouchableHighlight onPress = {this._onPressMoreDish} style = {{marginTop:10}}>
                                 <View style = {{flexDirection:'row', alignItems:'center', justifyContent:'flex-end', marginRight: 10}}>
@@ -483,7 +425,7 @@ const styles = StyleSheet.create({
         height: 30,
         marginLeft: 10,
         marginTop: 2,
-        borderRadius: 5,
+        borderRadius: 7,
         borderWidth: 1,
         borderColor: 'lightgray',
         justifyContent: 'center',
@@ -517,6 +459,18 @@ const styles = StyleSheet.create({
         backgroundColor:'transparent', 
         width: width - 40,
     },
+    sliderImage:{
+        width:30, 
+        height:30, 
+        position:'absolute', 
+        right:25
+    },
+    score:{
+        color: '#555555',
+        fontSize: 15,
+        position:'absolute',
+        left: 100,
+    }
 });
 
 //make this component available to the app

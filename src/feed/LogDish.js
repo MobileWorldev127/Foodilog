@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Navigator, Dimensions } from 'react-native';
 import FLFaceView from '../cell/FLFaceView'
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window')
 // create a component
@@ -20,8 +21,7 @@ class LogDish extends Component {
     }
 
     render() {
-
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.dishInfo.photoId + 'S'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.dishInfo.photoId + 'S'
         return (
             <View style={styles.container}>
                 <View style = {styles.navview}>
@@ -46,9 +46,9 @@ class LogDish extends Component {
                         </View>
                     </View>
                     <View>
-                        <Text style = {{color:'#AAAAAA', fontSize:16}}>{this.props.dishInfo.comment}</Text>
+                        <Text style = {{color:'#AAAAAA', fontSize:16, width: width}}>{this.props.dishInfo.comment}</Text>
                     </View>
-                    <View style = {{alignItems:'center',  justifyContent:'center', width:width, height:52, position:'absolute', bottom:0, flexDirection:'row', padding: 10}}>
+                    <View style = {{alignItems:'center',  justifyContent:'center', width:width, height:52,  flexDirection:'row', padding: 10}}>
                         <TouchableOpacity onPress = {this._onPressDishDetails} >
                             <View style = {styles.buttonView}>
                                 <Text style = {{color:'#652D6C', fontSize:14}}>Dish Details</Text>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     menuView:{
         width: width,
-        height: 120,
+        flexDirection:'column',
         position:'absolute',
         left: 0,
         bottom: 0,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         width: 28,
         height: 28, 
         position:'absolute',
-        right: 10,
+        right: 15,
         bottom: 12,
     },
     favoriteImage:{

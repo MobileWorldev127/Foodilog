@@ -1,12 +1,13 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Navigator, TouchableOpacity, Dimensions } from 'react-native';
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window')
 // create a component
 class FeedCommentCell extends Component {
     render() {
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.rowdata.uid + 'S'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.uid + 'S'
         return (
             <TouchableOpacity onPress = {this._onPressDishCell}>
                 <View style={styles.container}>

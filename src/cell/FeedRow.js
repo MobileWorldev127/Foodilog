@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Platform, Text, Dimensions, View, Image, TouchableHighlight, TouchableOpacity,TouchableWithoutFeedback ,AsyncStorage, Navigator} from 'react-native'
 import FLFaceView from '../cell/FLFaceView'
-
+import API from '../service/API'
 var TimeAgo = require('react-native-timeago')
 
 
@@ -42,7 +42,7 @@ export default class FeedRow extends Component {
             dishsName = Object.keys(this.props.rowdata.dishs).length + ' dishes'
         }
 
-        var iconURL = 'http://api2.foodilog.com:80/v1/resource/'+ this.props.rowdata.uid + 'S'
+        var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + this.props.rowdata.uid + 'S'
 
         var utcSeconds = this.props.rowdata.timestamp;
         var d = new Date(0); // The 0 there is the key, which sets the date to the epoch

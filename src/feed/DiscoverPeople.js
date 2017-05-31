@@ -3,18 +3,16 @@ import AtoZListView from 'react-native-atoz-listview';
 import {View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, TouchableHighlight, ScrollView, ListView, ActivityIndicator,AsyncStorage} from 'react-native';
 import Search from 'react-native-search-box';
 import DiscoverPeopleCell from '../cell/DiscoverPeopleCell'
+import API from '../service/API'
 
 const{width, height} = Dimensions.get('window');
 const rowHeight = 40;
 var isshowIndicator = false;
-type Timer = number;
 var searchText = String
 uid = ''
 userList = [];
 
 export default class DiscoverPeople extends Component {
-
-    _timer: Timer;
 
     constructor(props){
         super(props);
@@ -66,7 +64,7 @@ export default class DiscoverPeople extends Component {
             isshowIndicator:true,
         })
         AsyncStorage.getItem('FoodilogToken').then((value)=>{
-            var REQUEST_URL = 'http://api2.foodilog.com:80/v1/usersearch?token=' + value + '&name=' + this.state.searchText + '&limit=100'
+            var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_USER_URL + '?token=' + value + '&name=' + this.state.searchText + '&limit=100'
             fetch(REQUEST_URL, {
                 method: 'GET',
                 headers: { 
@@ -85,8 +83,6 @@ export default class DiscoverPeople extends Component {
                     }
                     console.log(userList);
                     if(userList.length>0){
-                        console.log('123123123')
-                        console.log(userList)
                         const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 != r2});
                         this.setState({
                             dataSource:ds.cloneWithRows(userList),
@@ -183,9 +179,9 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',   
     },
     facebookbutton:{
-      width: width - 40,
+      width: width - 20,
       height: 35,
-      marginLeft: 20,
+      marginLeft: 10,
       marginTop:10,
       borderRadius: 10,
       backgroundColor:'#38B664',

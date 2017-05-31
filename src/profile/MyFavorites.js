@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, Navigator,AsyncStorage, ListView, TouchableOpacity } from 'react-native';
-
+import API from '../service/API'
 import FeedRow from '../cell/FeedRow'
 import RestaurantCell from '../cell/RestaurantCell'
 import DishCell from '../cell/DishCell'
@@ -37,14 +37,13 @@ class MyFavorites extends Component {
         })
         AsyncStorage.getItem('FoodilogToken').then((value) => {
             if(this.state.log == true){
-                REQUEST_URL = 'http://api2.foodilog.com:80/v1/favourate/flog/me?token=' + value
+                REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.FAVOURATE_URL + 'flog/me?token=' + value
             }
             if(this.state.restaurant == true){
-                console.log('restaurant')
-                REQUEST_URL = 'http://api2.foodilog.com:80/v1/favourate/restaurant/me?token=' + value
+                REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.FAVOURATE_URL + 'restaurant/me?token=' + value
             }
             if(this.state.dish == true){
-                REQUEST_URL = 'http://api2.foodilog.com:80/v1/favourate/dish/me?token=' + value
+                REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.FAVOURATE_URL + 'dish/me?token=' + value
             }
             fetch(REQUEST_URL, {
                 method: 'GET',

@@ -1,8 +1,9 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, Navigator, ListView, AsyncStorage, ActivityIndicator} from 'react-native';
-
+import API from '../service/API'
 import FeedRow from '../cell/FeedRow'
+
 const{width, height} = Dimensions.get('window');
 var userloglist = [];
 
@@ -62,7 +63,7 @@ class UserLogs extends Component {
 
     getUserLogList(){
         AsyncStorage.getItem('FoodilogToken').then((value) =>{
-            var REQUEST_URL = 'http://api2.foodilog.com:80/v1/floglist/user/me?token=' + value +'&limit=100'
+            var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL +'me?token=' + value +'&limit=100'
             fetch(REQUEST_URL, {
                 method: 'GET',
                 headers: { 
@@ -103,7 +104,7 @@ class UserLogs extends Component {
                 <View style = {styles.wrapper}>
                     <ListView
                         dataSource = {this.state.dataSource}
-                        renderRow = {(data)=><FeedRow rowdata = {data} onPressFeedClicked = {this._onClickCell}/>}
+                        renderRow = {(data)=><FeedRow rowdata = {data} onPressFeedClicked = {this._onClickCell} navigator = {this.props.navigator}/>}
                         enableEmptySections = {true}/>
                 </View>
                 {this.showIndicator()}

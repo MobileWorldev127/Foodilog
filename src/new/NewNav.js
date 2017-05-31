@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { Navigator, Text, StyleSheet, Dimensions, View, ScrollView, Button, Image, TouchableOpacity, Slider,TextInput,  } from 'react-native'
-
+import { Navigator, Text, StyleSheet, Dimensions, View, ScrollView, AsyncStorage,Button, Image, TouchableOpacity, Slider,TextInput,  } from 'react-native'
+import FLSliderView from '../cell/FLSliderView'
+import FLFaceView from '../cell/FLFaceView'
+import FLLog from '../Logic/Model/FLLog'
+import RestaurantInfo from '../Logic/Model/RestaurantInfo'
 
 const{width, height} = Dimensions.get('window');
-
+var resName = ''
 
 export default class NewNav extends Component {
   constructor (props) {
@@ -14,72 +17,142 @@ export default class NewNav extends Component {
       slider2: 0.7,
       slider3: 0.7,
       slider4: 0.7,
+      resName: '',
+      rid: '',
+      rname:'',
     }
-    this._onPressBack = this._onPressBack.bind(this);
   }
 
-  _onPressBack(){
+  _onPressBack = () =>{
       this.props.navigator.pop();
   }
-  
+
+  showCancelButton(){
+      if(this.props.name == 'tab'){
+          return null
+      }else{
+          return(
+              <TouchableOpacity onPress = {this._onPressBack} style = {styles.cancel}>
+                  <Text style = {{marginTop:10, color:'white', fontSize:15,}}>Cancel</Text>
+              </TouchableOpacity>
+          )        
+      }
+  }
+  _onPressRestaurantList = () => {
+      this.props.navigator.push({
+          name: 'restaurantlist',
+      })
+  }
+  componentWillReceiveProps(nextProps) {
+      this.setState({
+          rname:'',
+          slider1 : 0.7,
+          slider2 : 0.7,
+          slider3 : 0.7,
+          slider4 : 0.7,    
+      })
+      AsyncStorage.getItem('isRestaurantInfo').then((isrestaurant) =>{
+          if(isrestaurant == 'true'){
+              AsyncStorage.getItem('RestaurantName').then((name) => {
+                  this.setState({
+                      rname : name, 
+                  })
+              })
+              AsyncStorage.getItem('RestaurantID').then((id) =>{
+                  this.setState({rid : id})
+              })
+          }else{
+              this.setState({
+                    rname:'',
+                    slider1 : 0.7,
+                    slider2 : 0.7,
+                    slider3 : 0.7,
+                    slider4 : 0.7,    
+                })
+          }
+      })
+  }
+
+  _onPressAddDish = () => {
+      if(this.state.rid == ''){
+          alert('Pleaes choose a restaurant first')
+      }else{
+          this.props.navigator.push({
+              name: 'dishes',
+              rid: this.state.rid,
+          })
+      }
+  }
+
   render () {
     return (
         <View style = {styles.wrapper}>
             <View style = {styles.navview}>
                 <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>New Log</Text>
-                <TouchableOpacity onPress = {this._onPressBack} style = {styles.cancel}>
-                    <Text style = {{marginTop:10, color:'white', fontSize:15,}}>Cancel</Text>
-                </TouchableOpacity>
+                {this.showCancelButton()}
             </View>
 
             <ScrollView>
 
               <View style = {{flex:1, flexDirection:'column', padding:15,}}>
-                  <Text style = {{color:'dimgray', marginTop:10}}>OVERALL RATING</Text>
-                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 5}}>
-                    <Text style = {{color:'black', fontSize:14}}>Overall</Text>
-                    <Slider
-                        value={this.state.slider1}
-                        onValueChange={(value) => this.setState({slider1:value})} 
-                        style = {{width:width*2/3, position:'absolute', right:55 }}
-                        maximumTrackTintColor = {'#652D6C'}/>
-                    {this.renderImage1()} 
+                  <Text style = {{color:'dimgray', marginTop:20}}>OVERALL RATING</Text>
+                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 20}}>
+                        <Text style = {{color:'black', fontSize:14}}>Overall</Text>
+                        <Slider
+                            value={this.state.slider1}
+                            onValueChange={(value) => this.setState({slider1:value})} 
+                            style = {styles.slider}
+                            maximumTrackTintColor = {'#652D6C'}/>
+                        <View style = {styles.sliderImage}>
+                            <FLFaceView score = {this.state.slider1*100} type = 'big'/>
+                        </View>  
                   </View>
                 
-                  <Text style = {{color:'dimgray', marginTop:30}}>OVERALL COMMENT</Text>
+                  <Text style = {{color:'dimgray', marginTop:35}}>OVERALL COMMENT</Text>
                 
-                  <TouchableOpacity onPress = {this._onPressComment}>
-                      <TextInput underlineColorAndroid = 'transparent' placeholder = 'Comment' editable = {false} style = {styles.textinput}/>          
+                  <TouchableOpacity onPress = {this._onPressRestaurantList}>
+                      <TextInput 
+                        underlineColorAndroid = 'transparent' 
+                        placeholder = 'Restaurant name' 
+                        editable = {false} 
+                        style = {styles.textinput}
+                        value = {this.state.rname}/>          
                   </TouchableOpacity>
 
-                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 15}}>
+                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 20}}>
                     <Text style = {{color:'black', fontSize:14}}>Ambiance</Text>
                     <Slider
                         value={this.state.slider2}
                         onValueChange={(value) => this.setState({slider2:value})} 
-                        style = {{width:width*2/3+10, position:'absolute', right:55 }}
+                        style = {styles.slider}
                         maximumTrackTintColor = {'#652D6C'}/>
-                    {this.renderImage2()}
+                    <View style = {styles.sliderImage}>
+                        <FLFaceView score = {this.state.slider2*100} type = 'big'/>
+                    </View>
                   </View>
 
-                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 15}}>
+                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 20}}>
                     <Text style = {{color:'black', fontSize:14}}>Service</Text>
                     <Slider
                         value={this.state.slider3}
                         onValueChange={(value) => this.setState({slider3: value})} 
-                        style = {{width:width*2/3+10, position:'absolute', right:55 }}
+                        style = {styles.slider}
                         maximumTrackTintColor = {'#652D6C'}/>
-                    {this.renderImage3()}
+                    <View style = {styles.sliderImage}>
+                        <FLFaceView score = {this.state.slider3*100} type = 'big'/>
+                    </View>
                   </View>
 
-                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 15}}>
+                  <View style = {{flexDirection:'row', width:width, alignItems:'center', marginTop: 20}}>
                     <Text style = {{color:'black', fontSize:14}}>Value</Text>
                     <Slider
                         value={this.state.slider4}
                         onValueChange={(value) => this.setState({slider4:value})} 
-                        style = {{width:width*2/3+10, position:'absolute', right:55 }}
+                        style = {styles.slider}
                         maximumTrackTintColor = {'#652D6C'}/>
-                    {this.renderImage4()}
+                    <View style = {styles.sliderImage}>
+                        <FLFaceView score = {this.state.slider4*100} type = 'big'/>
+                    </View>
                   </View>
 
                   <TextInput 
@@ -89,29 +162,29 @@ export default class NewNav extends Component {
                       placeholder = 'Comments (in 100 chars)' 
                       style = {styles.commentText}/>
                   
-                  <Text style = {{marginTop:20}}>DISHES</Text>
+                  <Text style = {{marginTop:30}}>DISHES</Text>
 
-                  <TouchableOpacity onPress = {this._onPressButton} style = {styles.button}>
+                  <TouchableOpacity onPress = {this._onPressAddDish} style = {styles.button}>
                       <Text style = {{color:'white', fontSize:16}}>Add Dish</Text>   
                   </TouchableOpacity>
 
-                  <Text style = {{marginTop:30}}>OTHER PHOTOS</Text>
+                  <Text style = {{marginTop:40}}>OTHER PHOTOS</Text>
 
                   <TouchableOpacity>
-                      <Image source = {require('../images/add_photo.png')} style = {{width:40, height:40, marginTop:10,}} />
+                      <Image source = {require('../images/add_photo.png')} style = {{width:60, height:60, marginTop:20,}} />
                   </TouchableOpacity>
 
                   <View style = {{flexDirection:'row', width:width-30, height:60, alignItems:'center', justifyContent:'center', marginTop:30}}>
-                      <TouchableOpacity  onPress = {this._onPressFacebook} style = {{alignItems:'center', justifyContent:'center', width: 85}}>
+                      <TouchableOpacity  onPress = {this._onPressFacebook} style = {styles.shareButton}>
                            <Image source = {require('../images/facebook_normal.png')} style={styles.facebook}/>
                       </TouchableOpacity>
-                      <TouchableOpacity  onPress = {this._onPressTwitter} style = {{alignItems:'center', justifyContent:'center', width: 85}}>
+                      <TouchableOpacity  onPress = {this._onPressTwitter} style = {styles.shareButton}>
                           <Image source = {require('../images/twitter_normal.png')} style={styles.facebook}/>
                       </TouchableOpacity>
-                      <TouchableOpacity  onPress = {this._onPressSina} style = {{alignItems:'center', justifyContent:'center', width: 85}}>
+                      <TouchableOpacity  onPress = {this._onPressSina} style = {styles.shareButton}>
                           <Image source = {require('../images/sina_normal.png')} style={styles.facebook}/>
                       </TouchableOpacity>
-                      <TouchableOpacity  onPress = {this._onPressPinterest} style = {{alignItems:'center', justifyContent:'center', width: 85}}>
+                      <TouchableOpacity  onPress = {this._onPressPinterest} style = {styles.shareButton}>
                           <Image source = {require('../images/pinterest_normal.png')} style={styles.facebook}/>
                       </TouchableOpacity>
                  </View>
@@ -124,113 +197,12 @@ export default class NewNav extends Component {
                         <Text style = {{color:'white', fontSize:16}}>Post</Text>
                     </TouchableOpacity>
                 </View>
-
-
-
               </View>
             </ScrollView>
         </View>
     );
   }
-
-    renderImage1() {
-        if(this.state.slider1 ==  1){
-            return (
-                <Image source = {require('../images/smile_5.png')} style = {{width:30, height:30, position:'absolute', right:25}} /> 
-            );
-        }else if(this.state.slider1 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider1 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider1 > 0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }
-    }
-
-    renderImage2() {
-        if(this.state.slider2 ==  1){
-            return (
-                <Image source = {require('../images/smile_5.png')} style = {{width:30, height:30, position:'absolute', right:25}} /> 
-            );
-        }else if(this.state.slider2 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider2 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider2 > 0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }
-    }
-
-    renderImage3() {
-        if(this.state.slider3 ==  1){
-            return (
-                <Image source = {require('../images/smile_5.png')} style = {{width:30, height:30, position:'absolute', right:25}} /> 
-            );
-        }else if(this.state.slider3 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider3 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider3 > 0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }
-    }
-
-    renderImage4() {
-        if(this.state.slider4 ==  1){
-            return (
-                <Image source = {require('../images/smile_5.png')} style = {{width:30, height:30, position:'absolute', right:25}} /> 
-            );
-        }else if(this.state.slider4 > 0.75){
-            return(
-                <Image source = {require('../images/smile_4.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider4 > 0.5){
-            return(
-                <Image source = {require('../images/smile_3.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else if(this.state.slider4 > 0.25){
-            return(
-                <Image source = {require('../images/smile_2.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }else{
-            return(
-                <Image source = {require('../images/smile_1.png')} style = {{width:30, height:30, position:'absolute', right:25}} />
-            );
-        }
-    }
-
 }
-
 
 
 const styles = StyleSheet.create({
@@ -261,17 +233,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textinput:{
-        height:25, 
+        height:30, 
         width:width-40,  
         borderColor:'gray', 
         borderWidth:1,
-        borderRadius:3, 
+        borderRadius:4,
         paddingTop:0,
         paddingBottom:0,
         paddingLeft: 10,
-        fontSize:12,
+        fontSize:13,
         marginLeft:5,
         marginTop: 10,
+        color:'black'
     },
     button:{
       width: width - 30,
@@ -302,10 +275,28 @@ const styles = StyleSheet.create({
         width: width-30, 
         backgroundColor: '#EFEFF4', 
         fontSize:14, 
-        height: 80, 
+        height: 90, 
         marginTop:20,
         paddingLeft: 5,
         paddingRight: 5
-    }
+    },
+    sliderImage:{
+        width:30, 
+        height:30, 
+        position:'absolute', 
+        right:25
+    },
+    slider:{
+        width:width*2/3, 
+        marginLeft:5,
+        position:'absolute',
+        right:55,
+    },
+    shareButton:{
+        alignItems:'center', 
+        justifyContent:'center', 
+        width: 85
+    },
+
 });
 

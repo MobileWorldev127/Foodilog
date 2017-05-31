@@ -1,6 +1,6 @@
 
 import React,{Component} from 'react';
-import {StyleSheet, Platform, Text, Navigator, Image,} from 'react-native';
+import {StyleSheet, Platform, Text, Navigator, Image, AsyncStorage} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import FeedNav from './feed/FeedNav'
@@ -62,7 +62,7 @@ export default class TabbarContainer extends Component {
                     renderIcon = {() => <Image source = {require('./images/tab_new.png')} style = {styles.tabImg}/>}
                     renderSelectedIcon = {() => <Image source = {require('./images/tab_new.png')} style = {styles.tabImg}/>}
                     onPress = {() => this.changeTab('new')}>
-                    <NewNav navigator = {this.props.navigator}/>
+                    <NewNav navigator = {this.props.navigator} name = 'tab'/>
                 </Tab>
                 <Tab
                     titleStyle = {[styles.titleStyle, {marginTop:-1}]}

@@ -1,4 +1,4 @@
-import  type { FLDish, } from './FLDish'
+
 
 export type FLLog = {
   id: string,
@@ -16,8 +16,8 @@ export type FLLog = {
   photos: Array<string>,
   dishes: Array<FLDish>,
   comment: string,
-  liked: Bool = false
-  favourate: boolean,
+  liked: false,
+  favourate: false,
   background: string,
 
 };
