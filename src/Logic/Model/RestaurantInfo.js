@@ -19,5 +19,7 @@ export type RestaurantInfo = {
     open: string,
     logCount: number,
     dishCount: number,
-
+    coordinate:[],
+    lat:string,
+    lng: string,
 }

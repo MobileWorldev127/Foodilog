@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Dimensions, ScrollView,  ListView, ActivityIndi
 import SearchRestaurantCell from '../cell/SearchRestaurantCell'
 import RestaurantDetail from './RestaurantDetail'
 import RestaurantInfo from '../Logic/Model/RestaurantInfo'
+import RestaurantFilter from './RestaurantFilter'
 import API from '../service/API'
 
 const {width, height} = Dimensions.get('window');
@@ -11,7 +12,7 @@ const {width, height} = Dimensions.get('window');
 var isLocationSearch = true
 
 var resturantList = [];
-
+var REQUEST_URL = ''
 // create a component
 class RestaurantTableView extends Component {
 
@@ -24,13 +25,21 @@ class RestaurantTableView extends Component {
             latitude: null,
             longitude: null,
             error: null,
+            params: new RestaurantFilter(),
+
         };
     }
-
-    componentWillMount() {
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            search_param : nextProps.search_param
+        })
         this.getsearchRestaurantsCall();
     }
+    componentWillMount() {
+        // this.getsearchRestaurantsCall();
+    }
     getsearchRestaurantsCall(){
+        
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 this.setState({
@@ -39,8 +48,12 @@ class RestaurantTableView extends Component {
                     error: null,
                 })
                 AsyncStorage.getItem('FoodilogToken').then((value) => {
-                    // var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + position.coords.latitude + ',' + position.coords.longitude + '&rank=distance' + '&token=' + value;
-                    var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + '37.33233141' + ',' + '-122.03121860' + '&rank=distance' + '&token=' + value;
+                    if(this.state.search_param == ''){
+                        REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + position.coords.latitude + ',' + position.coords.longitude + '&rank=distance' + '&token=' + value;
+                    }else{
+                        REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.SEARCH_URL + '?ll=' + position.coords.latitude + ',' + position.coords.longitude + '&token=' + value + this.state.search_param
+                    }
+                    
                     fetch(REQUEST_URL, {
                         method: 'GET',
                         headers: {
@@ -50,10 +63,15 @@ class RestaurantTableView extends Component {
                     })
                     .then((response) => response.json())
                     .then((responseData) => {
+                        console.log('restaurant table view===')
+                        console.log(responseData)
                         if(responseData.ok == true){
                             this.setState({
                                 dataSource: this.state.dataSource.cloneWithRows(responseData.restaurants)
                             })
+                            if(responseData.restaurants.length == 0){
+                                alert('No result')
+                            }
                         }
                     })
                 })
@@ -75,7 +93,6 @@ class RestaurantTableView extends Component {
             </View>
         );
     }
-  
 }
 
 

@@ -75,8 +75,6 @@ class Menu extends Component {
                 console.log(searchResult)          
             }
         })
-        console.log('********')
-        console.log(searchResult)
         this.setState({
             dataSource: this.state.dataSource.cloneWithRowsAndSections(searchResult),
         })

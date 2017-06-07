@@ -131,6 +131,10 @@ class UserProfile extends Component {
     _onPressBack = () =>{
         this.props.navigator.pop();
     }
+    _onPressFollow = () => {
+        alert('asd')
+    }
+
     render() {
         var iconURL = API.SERVER_URL + API.SERVICE_PORT + API.HEAD_ICON_RES_URL + profileID + 'L'
         const isFollow = this.state.isFollowed;
@@ -154,22 +158,23 @@ class UserProfile extends Component {
                             <View style = {styles.followView}>
                                 <View style = {{alignItems:'center', justifyContent:'center', width: (width-110)/3,}}>
                                         <Text style = {{color:'#82BB36', fontSize: 14, backgroundColor:'transparent'}}>{this.state.logs}</Text>
-                                        <Text style = {{color:'#AAAAAA', fontSize: 12, backgroundColor:'transparent',marginTop: 5,  }}>LOGS</Text>
+                                        <Text style = {styles.logs}>LOGS</Text>
                                 </View>
                                 <View style = {{alignItems:'center', justifyContent:'center', width: (width-110)/3,}}>
                                     <Text style = {{color:'red', fontSize: 14, backgroundColor:'transparent'}}>{this.state.followers}</Text>
-                                    <Text style = {{color:'#AAAAAA', fontSize: 12, backgroundColor:'transparent',marginTop: 5,  }}>FOLLOWERS</Text>
+                                    <Text style = {styles.logs}>FOLLOWERS</Text>
                                 </View>
                                 <View style = {{alignItems:'center', justifyContent:'center', width: (width-110)/3,}}>
                                     <Text style = {{color:'blue', fontSize: 14, backgroundColor:'transparent'}}>{this.state.followings}</Text>
-                                    <Text style = {{color:'#AAAAAA', fontSize: 12, backgroundColor:'transparent',marginTop: 5,  }}>FOLLOWING</Text>
+                                    <Text style = {styles.logs}>FOLLOWING</Text>
                                 </View>
                             </View>
                             <View style = {styles.follow}>
                                 <TouchableOpacity onPress = {this._onPressFollow}> 
                                     <Text style = {isFollow == false? {color:'#652D6C', fontSize:12, backgroundColor:'transparent'}:{color:'white', fontSize:12, backgroundColor:'transparent'}}>
-                                    {isFollow == false? str_Follow:str_Following}
-                                </Text>
+                                        {/*{isFollow == false? str_Follow:str_Following}*/}
+                                        Following
+                                    </Text>
                                 </TouchableOpacity>
                                 
                             </View>
@@ -252,7 +257,12 @@ const styles = StyleSheet.create({
         marginTop: 10,
         height: height - 210,
     },
-
+    logs:{
+        color:'#AAAAAA', 
+        fontSize: 12, 
+        backgroundColor:'transparent',
+        marginTop: 5,
+    },
 
 });
 

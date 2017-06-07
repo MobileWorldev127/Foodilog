@@ -1,43 +1,35 @@
 [
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_add_photo.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_add_photo.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_voice_search_api_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_voice_search_api_mtrl_alpha.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_type_dot.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_type_dot.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_restaurant_default.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_restaurant_default.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_longpressed_holo.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_longpressed_holo.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_movie_arrowdown.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_movie_arrowdown.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_textfield_default_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_textfield_default_mtrl_alpha.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_userphoto.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_userphoto.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_search_api_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_search_api_mtrl_alpha.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_message.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_message.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_paste_mtrl_am_alpha.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_4.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_4.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_dish_default.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_dish_default.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_switch_track_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_distance_dot.png",
@@ -60,18 +52,6 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_follow_button.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_pressed_holo_dark.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_rating_star_on_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_rating_star_on_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_following_button.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_following_button.png"
     },
@@ -80,28 +60,24 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_map_bg.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ab_share_pack_mtrl_alpha.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_profile.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_profile.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_back.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_back.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_moreoverflow_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_moreoverflow_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_share_file.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_share_file.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_heart_selected.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_heart_selected.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_check_to_on_mtrl_000.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_check_to_on_mtrl_000.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_3.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_3.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_price_dot.png",
@@ -112,12 +88,12 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/node_modules_reactnativesearchbox_img_delete.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_commit_search_api_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_commit_search_api_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_sina_normal.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_sina_normal.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_feedlog1.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_feedlog1.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_fb_login.png",
@@ -128,138 +104,6 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_button_down_arrow.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_clear_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_clear_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_divider_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_go_search_api_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_go_search_api_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_tab_indicator_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/node_modules_reactnativesearchbox_img_search.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/node_modules_reactnativesearchbox_img_search.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_star_selected.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_star_selected.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/node_modules_reactnative_libraries_customcomponents_navigationexperimental_assets_backicon.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/node_modules_reactnative_libraries_customcomponents_navigationexperimental_assets_backicon.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_radio_to_on_mtrl_015.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_1.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_1.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_twitter_normal.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_twitter_normal.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_feed.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_feed.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_textfield_activated_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_logo.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_logo.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_new.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_new.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_add_photo.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_add_photo.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_type_dot.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_type_dot.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_userphoto.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_userphoto.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_message.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_message.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_4.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_4.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_radio_to_on_mtrl_000.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_popup_background_mtrl_mult.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_check_to_on_mtrl_015.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_profile.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_profile.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_menu_share_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_share_file.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_share_file.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_3.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_3.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_feedlog1.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_feedlog1.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_pressed_holo_light.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_pressed_holo_light.9.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_menu_hardkey_panel_mtrl_mult.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_5.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_5.png"
     },
@@ -268,28 +112,20 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_feed_image_default.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_textfield_search_activated_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_2.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_2.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_btn_rating_star_off_mtrl_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_btn_rating_star_off_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_report.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_report.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_head_image_default.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_head_image_default.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_list_focused_holo.9.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_list_focused_holo.9.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/node_modules_reactnativesearchbox_img_search.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/node_modules_reactnativesearchbox_img_search.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_edit.png",
@@ -304,16 +140,40 @@
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_button_left_arrow.png"
     },
     {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_star_selected.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_star_selected.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/node_modules_reactnative_libraries_customcomponents_navigationexperimental_assets_backicon.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/node_modules_reactnative_libraries_customcomponents_navigationexperimental_assets_backicon.png"
+    },
+    {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_star_unselected.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_star_unselected.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_smile_1.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_smile_1.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_login_bg.png",
         "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_login_bg.png"
     },
     {
-        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/abc_ic_ab_back_mtrl_am_alpha.png",
-        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-mdpi/abc_ic_ab_back_mtrl_am_alpha.png"
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_twitter_normal.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_twitter_normal.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_feed.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_feed.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_logo.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_logo.png"
+    },
+    {
+        "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_tab_new.png",
+        "source": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/src/main/res/drawable-mdpi/src_images_tab_new.png"
     },
     {
         "merged": "/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/res/merged/release/drawable-mdpi/src_images_facebook_normal.png",

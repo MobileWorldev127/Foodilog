@@ -46,7 +46,6 @@ export default class RestaurantDetail extends Component {
             })
             .then((response) => response.json())
             .then((responseData) => {
-                console.log(responseData)
                 RestaurantInfo.favourate = responseData.isFavourate
                 if(responseData.ok == true){
                     RestaurantInfo.star = responseData.restaurant.star
@@ -55,17 +54,18 @@ export default class RestaurantDetail extends Component {
                     RestaurantInfo.tel = responseData.restaurant.tel
                     RestaurantInfo.priceTier = responseData.restaurant.priceTier
                     RestaurantInfo.address = responseData.restaurant.location.formattedAddress
-                    RestaurantInfo.coordinate = responseData.restaurant.coordinate
+                    RestaurantInfo.lat = responseData.restaurant.location.lat
+                    RestaurantInfo.lng = responseData.restaurant.location.lng
                     RestaurantInfo.logCount = responseData.restaurant.logCount
                     RestaurantInfo.dishCount = responseData.restaurant.dishCount
                     RestaurantInfo.photoUrl = responseData.restaurant.photoUrl
                     RestaurantInfo.rating = responseData.restaurant.rating
                     RestaurantInfo.name = responseData.restaurant.name
                     RestaurantInfo.id = responseData.restaurant.id
+                    RestaurantInfo.distance = responseData.restaurant.location.distance
                     if(responseData.restaurant.hours){
                         RestaurantInfo.isOpen = responseData.restaurant.isOpen
                     }
-                    RestaurantInfo.distance = responseData.restaurant.location.distance
 
                     this.setState({
                         // RestaurantDetail:RestaurantDetail,
@@ -140,8 +140,6 @@ export default class RestaurantDetail extends Component {
         this.props.navigator.pop()
     }
     _onPressMoreDish = () => {
-        console.log('musttryview')
-        console.log(this.props.restaurantId)
         this.props.navigator.push({
             name: 'musttryview',
             rid:this.props.restaurantId,
@@ -159,6 +157,19 @@ export default class RestaurantDetail extends Component {
             rname: this.state.RestaurantInfo.name,
         })
     }
+    _onPressMoreLogs = () => {
+        this.props.navigator.push({
+            name:'RestaurantLogs',
+            rid: this.props.restaurantId,
+        })
+    }
+    _onpressLocation = () => {
+        this.props.navigator.push({
+            name: 'map',
+            rinfo: this.state.RestaurantInfo,
+        })
+    }
+
     show_type_priceTier(){
         switch(this.state.RestaurantInfo.priceTier){
             case 2:
@@ -315,24 +326,24 @@ export default class RestaurantDetail extends Component {
                                 dataSource = {this.state.mustTryDataSource}
                                 renderRow = {(data) => <MustTryDishCell rowdata = {data} navigator = {this.props.navigator}/>}
                                 enableEmptySections = {true}/>
-                            <TouchableHighlight onPress = {this._onPressMoreDish} style = {{marginTop:10}}>
+                            <TouchableOpacity onPress = {this._onPressMoreDish} style = {{marginTop:10}}>
                                 <View style = {{flexDirection:'row', alignItems:'center', justifyContent:'flex-end', marginRight: 10}}>
                                     <Text style = {{color:'#AAAAAA', backgroundColor:'transparent', fontSize:13, }}>More dishes</Text>
                                     <Image source = {require('../images/button_left_arrow.png')} style = {styles.arrow}/>
                                 </View>
-                            </TouchableHighlight>                   
+                            </TouchableOpacity>                   
                             
                             <Text style = {{color:'#555555', backgroundColor:'transparent', fontSize:15, marginLeft:14, marginTop:20}}> LOGS </Text>
                             <ListView
                                 dataSource = {this.state.logDataSource}
-                                renderRow = {(data) => <FeedRow rowdata = {data}/>}
+                                renderRow = {(data) => <FeedRow rowdata = {data} navigator = {this.props.navigator}/>}
                                 enableEmptySections = {true}/>
-                            <TouchableHighlight onPress = {this._onPressMoreLogs} style = {{marginTop:10}}>
+                            <TouchableOpacity onPress = {this._onPressMoreLogs} style = {{marginTop:10}}>
                                 <View style = {{flexDirection:'row', alignItems:'center', justifyContent:'flex-end', marginRight: 10}}>
                                     <Text style = {{color:'#AAAAAA', backgroundColor:'transparent', fontSize:13, }}>More Logs</Text>
                                     <Image source = {require('../images/button_left_arrow.png')} style = {styles.arrow}/>
                                 </View>
-                            </TouchableHighlight>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ScrollView>
@@ -470,7 +481,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         position:'absolute',
         left: 100,
-    }
+    },
 });
 
 //make this component available to the app

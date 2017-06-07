@@ -28,6 +28,7 @@ var ok = false;
 var token = '';
 var newregister = false;
 var userInfo = [];
+var REQUEST_URL = ''
 
 export default class LoginPage extends Component{
 
@@ -37,24 +38,31 @@ export default class LoginPage extends Component{
     }
     
     _handleLogin = () =>{
-        const { dispatchLogin, } = this.props
-        LoginManager.logInWithReadPermissions([ 'email', 'public_profile', 'user_friends'])
-        .then((result) => result.isCancelled ? null : AccessToken.getCurrentAccessToken())
-        .then((data) => {
-            const token = data.accessToken.toString();
-            if (token) {
-                console.log(TAG, token);
-                {this.dispatchLogin(token)};
-            }
-        }).catch((e) => {
-          console.log(TAG, e)
-        })
+         const { dispatchLogin, } = this.props
+         LoginManager.logInWithReadPermissions([ 'email', 'public_profile', 'user_friends'])
+         .then((result) => result.isCancelled ? null : AccessToken.getCurrentAccessToken())
+         .then((data) => {
+             const token = data.accessToken.toString();
+             if (token) {
+                 console.log(TAG, token);
+                 {this.dispatchLogin(token)};
+             }
+         }).catch((e) => {
+           console.log(TAG, e)
+         })
+
+        //AsyncStorage.setItem('FoodilogUserID', 'DMEGD7UCPGSEUCG5YRNH_G')
+        //AsyncStorage.setItem('FoodilogToken', '9RGMJ_8GMQS_UUS4BF_DPQ')
+        //this.props.navigator.push({
+        //    name: "tabcontainer"
+        //})
+
     }
 
     dispatchLogin(fbToken){
-        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.LOGIN_URL + '?access_token=' + fbToken
+        REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.LOGIN_URL + '?access_token=' + fbToken
         console.log(REQUEST_URL);
-        fetch(REQUEST_URL,{
+        fetch(REQUEST_URL, {
             method: 'GET',
             headers: {
                 'Accept' : 'application/json',
@@ -85,7 +93,7 @@ export default class LoginPage extends Component{
                 }
                 if(userInfo.account){
                     AsyncStorage.setItem('FoodilogUserID', userInfo.account);
-                    AsyncStorage.setItem('FoodilogToken', token);                  //We set the token as manually. We have to change this value after.
+                    AsyncStorage.setItem('FoodilogToken', token);              //We set the token as manually. We have to change this value after.
                     // AsyncStorage.setItem('FoodilogUserID', 'DMEGD7UCPGSEUCG5YRNH_G')
                     // AsyncStorage.setItem('FoodilogToken', '9RGMJ_8GMQS_UUS4BF_DPQ')
                     console.log('FoodilogUserID ->' + userInfo.account);

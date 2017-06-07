@@ -94,7 +94,6 @@ class DishDetail extends Component {
         }else{
             return null
         }
-        
     }
 
     _onPressBack = () => {

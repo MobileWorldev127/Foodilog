@@ -31,6 +31,8 @@ import MustTryView from './feed/MustTryView'
 import RestaurantList from './new/RestaurantList'
 import Dishes from './new/Dishes'
 import NLDishComment from './new/NLDishComment'
+import RestaurantLogs from './feed/RestaurantLogs'
+import Map from './feed/Map'
 
 var _navigation;
 
@@ -167,6 +169,16 @@ export default class  App extends Component{
                     <NLDishComment navigator = {navigator}
                         dishinfo = {route.dishinfo}/>
                 );
+            case 'RestaurantLogs':
+                return(
+                    <RestaurantLogs navigator = {navigator} 
+                        rid = {route.rid}/>
+                );
+            case 'map':
+                return(
+                    <Map navigator = {navigator}
+                        rinfo = {route.rinfo}/>
+                )
         }
     }
 

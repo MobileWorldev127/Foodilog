@@ -9,56 +9,7 @@ import {PullView} from 'react-native-pull';
 
 const{width, height} = Dimensions.get('window');
 
-var resturantList = [
-  {
-    id: "fsqi-4471bf9af964a5209c331fe3",
-    name: "Jack the Horse Tavern",
-    lat: "40.69993286239937",
-    lng: "-73.9936975351119",
-    formattedAddress: "66 Hicks St (at Cranberry)",
-    distance: "531",
-    tel: "123",
-    open: "123",
-    rating: "8.8",
-    hasMenu: true,
-    type: "American Restaurant",
-    priceTier: "3",
-    likes: "5638",
-    photoUrl: "https://irs1.4sqi.net/img/general/320x160/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg"
-  },
-  {
-    id: "fsqi-44d9e8dbf964a5208a361fe3",
-    name: "Dean & DeLuca",
-    lat: "40.724154220508936",
-    lng: "-73.9977089326415",
-    formattedAddress: "560 Broadway (at Prince St)",
-    distance: "2695",
-    tel: "123",
-    open: "123",
-    rating: "8.8",
-    hasMenu: true,
-    type: "American Restaurant",
-    priceTier: "3",
-    likes: "5638",
-    photoUrl: "https://irs1.4sqi.net/img/general/320x160/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg"
- },
- {
-    id: "fsqi-4471bf9af964a5209c331fe3",
-    name: "Jack the Horse Tavern",
-    lat: "40.69993286239937",
-    lng: "-73.9936975351119",
-    formattedAddress: "66 Hicks St (at Cranberry)",
-    distance: "531",
-    tel: "123",
-    open: "123",
-    rating: "8.8",
-    hasMenu: true,
-    type: "American Restaurant",
-    priceTier: "3",
-    likes: "5638",
-    photoUrl: "https://irs1.4sqi.net/img/general/320x160/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg"
-  },
-];
+var resturantList = [];
 
 var showMap = false;
 var showFilter = false;
@@ -73,11 +24,19 @@ class RestaurantSearch extends Component {
             refreshing: false,
             showMap: false,
             showFilter: false,
+            params: new RestaurantFilter(),
+            search_param:''
         };
         this.onPullRelease = this.onPullRelease.bind(this);
         this.topIndicatorRender = this.topIndicatorRender.bind(this);
         this._onPressMap = this._onPressMap.bind(this);
         this._onPressFilter = this._onPressFilter.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            search_param : nextProps.params1
+        })
     }
 
     _onPressMap(){
@@ -88,6 +47,10 @@ class RestaurantSearch extends Component {
     _onPressFilter(){
         showFilter = !showFilter;
         this.setState({showFilter});
+
+        console.log('**********')
+        var a = this.state.params._onPressApply()
+        console.log(a)
 
     }
 
@@ -125,6 +88,7 @@ class RestaurantSearch extends Component {
       );
     }
 
+
     render() {
         const showMap = this.state.showMap;
         const showFilter = this.state.showFilter; 
@@ -134,37 +98,38 @@ class RestaurantSearch extends Component {
                     <View style={styles.container}>
                         <View style = {styles.menuview}>
                             <TouchableOpacity onPress = {this._onPressMap} style = {styles.mapview}>
-                                <Text style = {{color:'lightgray'}}>Map</Text>
+                                <Text style = {{color:'darkgray'}}>Map</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <TouchableOpacity onPress = {this._onPressFilter} style = {styles.filterview}>
-                                <Text style = {{color:'lightgray'}}>Filter</Text>
+                                <Text style = {{color:'darkgray'}}>Filter</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <View style = {{backgroundColor:'lightgray', width:1, height:42, position:'absolute', left:width/2, top:1}}></View>
                             <View style = {{backgroundColor:'lightgray', width:width, height:1, position:'absolute', bottom:1, left:0}}></View>
                         </View>
 
-                        <RestaurantFilter/>                    
-                    </View>
+                        <RestaurantFilter navigator = {this.props.navigator} doneButtonPressed = {this._onPressFilter}/> 
+                                      
+                    </View> 
                  );
             }else{
                 return (
                     <View style={styles.container}>
                         <View style = {styles.menuview}>
                             <TouchableOpacity onPress = {this._onPressMap} style = {styles.mapview}>
-                                <Text style = {{color:'lightgray'}}>Map</Text>
+                                <Text style = {{color:'darkgray'}}>Map</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <TouchableOpacity onPress = {this._onPressFilter} style = {styles.filterview}>
-                                <Text style = {{color:'lightgray'}}>Filter</Text>
+                                <Text style = {{color:'darkgray'}}>Filter</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <View style = {{backgroundColor:'lightgray', width:1, height:42, position:'absolute', left:width/2, top:1}}></View>
                             <View style = {{backgroundColor:'lightgray', width:width, height:1, position:'absolute', bottom:1, left:0}}></View>
                         </View>
 
-                        <RestaurantTableView navigator = {this.props.navigator}/>                    
+                        <RestaurantTableView navigator = {this.props.navigator} search_param = {this.state.search_param}/>                    
                     </View>
                 );
             }
@@ -176,18 +141,18 @@ class RestaurantSearch extends Component {
                     <View style={styles.container}>
                         <View style = {styles.menuview}>
                             <TouchableOpacity onPress = {this._onPressMap} style = {styles.mapview}>
-                                <Text style = {{color:'lightgray'}}>List</Text>
+                                <Text style = {{color:'darkgray'}}>List</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <TouchableOpacity onPress = {this._onPressFilter} style = {styles.filterview}>
-                                <Text style = {{color:'lightgray'}}>Filter</Text>
+                                <Text style = {{color:'darkgray'}}>Filter</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>                        
                             <View style = {{backgroundColor:'lightgray', width:1, height:42, position:'absolute', left:width/2, top:1}}></View>
                             <View style = {{backgroundColor:'lightgray', width:width, height:1, position:'absolute', bottom:1, left:0}}></View>
                         </View>
 
-                        <RestaurantFilter/>
+                        <RestaurantFilter navigator = {this.props.navigator} doneButtonPressed = {this._onPressFilter}/>
                     </View>
                  );
             }
@@ -196,18 +161,18 @@ class RestaurantSearch extends Component {
                     <View style={styles.container}>
                         <View style = {styles.menuview}>
                             <TouchableOpacity onPress = {this._onPressMap} style = {styles.mapview}>
-                                <Text style = {{color:'lightgray'}}>List</Text>
+                                <Text style = {{color:'darkgray'}}>List</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>
                             <TouchableOpacity onPress = {this._onPressFilter} style = {styles.filterview}>
-                                <Text style = {{color:'lightgray'}}>Filter</Text>
+                                <Text style = {{color:'darkgray'}}>Filter</Text>
                                 <Image source = {require('../images/button_down_arrow.png')} style = {{width:12, height:7, marginLeft:5, resizeMode:'contain'}}/>
                             </TouchableOpacity>                        
                             <View style = {{backgroundColor:'lightgray', width:1, height:42, position:'absolute', left:width/2, top:1}}></View>
                             <View style = {{backgroundColor:'lightgray', width:width, height:1, position:'absolute', bottom:1, left:0}}></View>
                         </View>
 
-                        <RestaurantMapContainer/>
+                        <RestaurantMapContainer navigator = {this.props.navigator}/>
                     </View>
                 );
             }
@@ -215,12 +180,6 @@ class RestaurantSearch extends Component {
         }
     }
 
-    // showFilter(){
-    //     isMenuHidden = false
-    //     return(
-    //         <RestaurantFilter/>
-    //     );
-    // }
 }
 
 // define your styles
@@ -248,7 +207,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         flexDirection:'row',
-    }
+    },
 });
 
 

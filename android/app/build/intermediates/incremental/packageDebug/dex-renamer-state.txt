@@ -1,4 +1,4 @@
-#Mon May 29 22:29:55 CST 2017
+#Fri Jun 02 11:35:36 CST 2017
 base.0=/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/macos/Documents/ReactNative WorkSpace/Foodilog/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

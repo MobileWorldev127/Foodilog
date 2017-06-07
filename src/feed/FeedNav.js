@@ -19,7 +19,6 @@ class FeedNav extends React.Component {
         dataSource:ds.cloneWithRows(feedLogs),
         isDiscoverViewHidden : true,
     };
-    
   }
 
   _onPressDiscoer = () => {
@@ -40,38 +39,35 @@ class FeedNav extends React.Component {
     this.setState({
         dataSource:this.state.dataSource.cloneWithRows(feedLogs)
     });
-    AsyncStorage.getItem('FoodilogToken')
-        .then( (value) => { 
-            if(value){
-                var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL + 'friends?token=' + value + '&limit=100'
-                fetch(REQUEST_URL,{
-                    method: 'GET',
-                    headers: {
-                        'Accept' : 'application/json',
-                        'Content-Type' : 'application/json',
-                    }, 
-                })
-                .then((response) => response.json())
-                .then((responseData) => {
-                    console.log('FeedNav list')
-                    console.log('responseData')
-                    ok = responseData.ok;
-                    if(ok){
-                        feedLogs = responseData.logs;
-                        const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 != r2});
-                        this.setState({
-                            dataSource:ds.cloneWithRows(feedLogs)
-                        });
-                    }else{
-                      alert('No result')
-                    }
-                }).catch((e) => {
-                    console.log(e)
-                })   
-            } 
-        });
+
+    AsyncStorage.getItem('FoodilogToken').then( (value) => { 
+        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_LOGLIST_URL + 'friends?token=' + value + '&limit=100'
+        fetch(REQUEST_URL,{
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/json',
+            }, 
+        })
+        .then((response) => response.json())
+        .then((responseData) => {
+            ok = responseData.ok;
+            if(ok == true){
+                feedLogs = responseData.logs;
+                const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 != r2});
+                this.setState({
+                    dataSource:ds.cloneWithRows(feedLogs)
+                });
+            }else{
+                alert('No result')
+            }
+        }).catch((e) => {
+            console.log(e)
+        })   
+      });
+
       AsyncStorage.getItem('FoodilogToken').then((uid)=>{
-        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.FOLLOW_URL + '?token=' + uid
+        var REQUEST_URL = API.SERVER_URL + API.SERVICE_PORT + API.GET_FOLLOW_URL + '?token=' + uid
         fetch(REQUEST_URL, {
             method: 'GET',
             headers: { 
@@ -81,8 +77,6 @@ class FeedNav extends React.Component {
         })
         .then((response) => response.json())
         .then((responseData) => {
-            console.log('Discover People')
-            console.log(responseData)
             if(responseData.ok == true){
                 if(responseData.users.length>0){
                     isDiscoverViewHidden = true
@@ -162,8 +156,6 @@ const styles = StyleSheet.create({
       justifyContent:'center',                                            
       alignItems:'center',
     },
-
-  
 });
 
 export default FeedNav

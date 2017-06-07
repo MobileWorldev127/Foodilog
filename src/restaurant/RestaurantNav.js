@@ -6,6 +6,7 @@ import RestaurantSearch from './RestaurantSearch'
 import Search from 'react-native-search-box';
 const{width, height} = Dimensions.get('window');
 var isLocationMenu = false;
+var isdropdown = false;
 
 class RestaurantNav extends Component {
   constructor (props) {
@@ -14,21 +15,24 @@ class RestaurantNav extends Component {
         restaurantName: '',
         locationName: '',
         isLocationMenu: false,
+        isdropdown : false,
+        str_restaurant: 'Restaurant',
+        str_searchRestaurant: 'Search Restaurants',
+        params:''
     }
   }
 
   hideLocationMenu(){
       if(this.state.isLocationMenu == true){
           return(
-            <View style = {{height:45, flexDirection:'row', alignItems:'center', padding:5}}>
+            <View style = {{height:40, flexDirection:'row', alignItems:'center',marginTop:-5}}>
                 <Text style = {{color:'white', marginLeft: 10}}>Location</Text>
                 <View style = {{ height:40, position:'absolute', right:10, left: 90}}>
                     <Search
                         ref = 'SearchBar'
-                        placeholder ='  Search Locations  '
-                        
+                        placeholder =' Search Locations'
                         backgroundColor = 'transparent'
-                        titleCancelColor = '#652D6C'
+                        titleCancelColor = 'white'
                     />
                 </View>
             </View>
@@ -36,8 +40,54 @@ class RestaurantNav extends Component {
       }else{
           return null;
       }
-      
-        
+  }
+
+  _onPressSearch(){
+      var searchText = this.state.restaurantName
+      var params = '&query=' + searchText + '&rank=' + 'distance' + '&price=' + ''
+      console.log(params)
+      this.setState({ params:params })
+  }
+
+
+
+  showDropDown(){
+      if(this.state.isdropdown == true){
+          return(                                                                          
+              <View style = {styles.dropView}>
+                  <TouchableOpacity onPress = {this.restaurantTag}>
+                      <Text style = {{color: 'white',height: 20}}>Restaurant</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress = {this.dishTag}>
+                      <Text style = {{color: 'white', marginTop: 7}}>Dish</Text>
+                  </TouchableOpacity>
+              </View>
+          );     
+      }else{
+          return null;
+      }
+  }
+
+  _onPressRestaurant = () => {
+      isdropdown =! isdropdown
+      this.setState({isdropdown})
+  }
+
+  restaurantTag = () => {
+      isdropdown =! isdropdown
+      this.setState({
+          str_restaurant:'Restaurant',
+          str_searchRestaurant:'Search Restaurants',
+          isdropdown: isdropdown,
+      })
+  }
+  dishTag = () => {
+      isdropdown =! isdropdown
+      this.setState({
+          str_restaurant:'Dish',
+          str_searchRestaurant: 'Dish',
+          isdropdown: isdropdown,
+      })
   }
 
   render () {
@@ -47,18 +97,20 @@ class RestaurantNav extends Component {
               <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>Search</Text>
           </View>
           <View style = {styles.menuview}>
-              <View style = {{height:45, flexDirection:'row', alignItems:'center', padding:5}}>
-                  <Text style = {{color:'white', marginLeft: 10}}>Restaurant</Text>
+              <View style = {{height:40, flexDirection:'row', alignItems:'center'}}>
+
+                  <TouchableOpacity onPress = {this._onPressRestaurant}>
+                        <Text style = {{color:'white', marginLeft: 10, textAlign:'center'}}>{this.state.str_restaurant}</Text>
+                  </TouchableOpacity>  
                   <View style = {{ height:40, position:'absolute', right:10, left: 90}}>
                     <Search
                         ref = 'SearchBar'
-                        placeholder = '  Search Restaurants  '  
+                        placeholder = {this.state.str_searchRestaurant}
                         backgroundColor = 'transparent'
-                        titleCancelColor = '#652D6C'
+                        titleCancelColor = 'white'
                         onChangeText = {(text) => {
-                            this.setState({
-                                restaurantName:text
-                            })
+                            this.setState({ restaurantName: text }),
+                            this._onPressSearch()
                         }}
                         onFocus = {() =>{
                             this.setState({isLocationMenu : true})
@@ -66,19 +118,19 @@ class RestaurantNav extends Component {
                         onCancel = {() =>{
                             this.setState({isLocationMenu : false})
                         }}
+                        onSearch = {() => {
+                            this._onPressSearch()
+                        }}
                     />
                   </View>
               </View>
-              
-              <View style = {{width:width, height:1, backgroundColor:'#b5b5b5'}}>
-              </View>
 
               {this.hideLocationMenu()}
-     
 
           </View>
 
-          <RestaurantSearch navigator = {this.props.navigator}/>
+          <RestaurantSearch navigator = {this.props.navigator} params1 = {this.state.params}/>
+          {this.showDropDown()}
 
       </View>
     )
@@ -87,19 +139,30 @@ class RestaurantNav extends Component {
 
 const styles = StyleSheet.create({
     wrapper:{
-      flex:1,
-      backgroundColor:'white',
+        flex:1,
+        backgroundColor:'white',
     },
     navview:{
-      backgroundColor: '#652D6C',
-      width: width,
-      height: 50,
-      justifyContent: 'center',
-      alignItems: 'center'
+        backgroundColor: '#652D6C',
+        width: width,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     menuview:{
-      width: width,
-      backgroundColor:'lightgray'
+        width: width,
+    //   backgroundColor:'lightgray',
+        backgroundColor:'#652D6C',
+    },
+    dropView:{
+        width: 100,
+        height: 60,
+        backgroundColor: '#652D6C',
+        position:'absolute',
+        left: 0,
+        top: 90,
+        justifyContent:'center',
+        alignItems: 'center',
     },
 });
 

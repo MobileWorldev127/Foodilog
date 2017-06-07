@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity,Image, Navigator} from 'react-native';
 import SortButton from '../Button/SortButton'
+import RestaurantTableView from './RestaurantTableView'
 import FilterButton from '../Button/FilterButton'
 const {width, height} = Dimensions.get('window');
 
@@ -17,6 +18,7 @@ var isDistance1 = false;
 var isDistance2 = false;
 var isDistance3 = false;
 var isDistance4 = false;
+var params = ''
 
 // create a component
 class RestaurantFilter extends Component {
@@ -51,8 +53,11 @@ class RestaurantFilter extends Component {
             isDistance2: false,
             isDistance3: false,
             isDistance4: false,
+            params:''
         }
     }
+
+    
 
     _onPressRelevance(){
         {this.sortButtonPressedAtIndex(key = 0)}
@@ -81,27 +86,33 @@ class RestaurantFilter extends Component {
         this.setState(
             {isRelevance, isDistance, isRating}
         )
+        // this._onPressApply()
     }
 
     _onPressOpennow(){
         isOpennow = !isOpennow;
         this.setState({isOpennow});
+        // this._onPressApply()
     }
     _onPressPrice1(){
         isPrice1 = !isPrice1;
         this.setState({isPrice1});
+        // this._onPressApply()
     }
     _onPressPrice2(){
         isPrice2 = !isPrice2;
         this.setState({isPrice2});
+        // this._onPressApply()
     }
     _onPressPrice3(){
         isPrice3 = !isPrice3;
         this.setState({isPrice3});
+        // this._onPressApply()
     }
     _onPressPrice4(){
         isPrice4 = !isPrice4;
         this.setState({isPrice4});
+        // this._onPressApply()
     }
 
     _onPressDistance1(){
@@ -133,7 +144,7 @@ class RestaurantFilter extends Component {
             isDistance3 = true;
             isDistance4 = false;
         }else if(key == 3){
-             isDistance1 = false;
+            isDistance1 = false;
             isDistance2 = false;
             isDistance3 = false;
             isDistance4 = true;
@@ -141,16 +152,74 @@ class RestaurantFilter extends Component {
         this.setState(
             {isDistance1, isDistance2, isDistance3, isDistance4}
         )
+        // this._onPressApply()
     }
 
     _onPressClear(){
 
     }
-    _onPressApply(){
 
+    _onPressApply(){
+        params = ''
+        if(this.state.isRelevance == true){
+            params = 'rank=' + 'relevance'
+        }
+        if(this.state.isDistance == true){
+            params = 'rank=' + 'distance'
+        }
+        if(this.state.isRating == true){
+            params = 'rank=' + 'rating'
+        }
+        if(this.state.isOpennow == true){
+            params = params + '&opennow=' + '1'
+        }
+        var priceStr = ''
+        if(this.state.isPrice1 == true){
+            priceStr += '1'
+        }
+        if(this.state.isPrice2 == true){
+            if(this.state.isPrice1 == true){
+                priceStr += ',2'
+            }else{
+                priceStr += '2'
+            }
+        }
+        if(this.state.isPrice3 == true){
+            if(this.state.isPrice1== true || this.state.isPrice2 == true){
+                priceStr += ',3'
+            }else{
+                priceStr += '3'
+            }
+        }
+        if(this.state.isPrice4 == true){
+            if(this.state.isPrice1 == true || this.state.isPrice2 == true || this.state.isPrice3 == true){
+                priceStr += ',4'
+            }else{
+                priceStr += '4'
+            }
+        }
+        params = params + '&price=' + priceStr
+        if(this.state.isDistance1 == true){
+            params = params + '&distance=' + '1'
+        }
+        if(this.state.isDistance2 == true){
+            params = params + '&distance=' + '5'
+        }
+        if(this.state.isDistance3 == true){
+            params = params + '&distance=' + '10'
+        }
+        if(this.state.isDistance4 == true){
+            params = params + '&distance=' + '20'
+        }
+
+        // this.setState({params})
+        console.log(params)
+        return params
     }
+    
 
     render() {
+        this._onPressApply()
         const distance1Str = '<1 Mile';
         const distance2Str = '<5 Miles';
         const distance3Str = '<10 Miles';
@@ -164,8 +233,8 @@ class RestaurantFilter extends Component {
         const isPrice3 = this.state.isPrice3;
         const isPrice4 = this.state.isPrice4;
         const isDistance1 = this.state.isDistance1;
-        const isdistance2 = this.state.isdistance2;
-        const isdistance3 = this.state.isdistance3;
+        const isDistance2 = this.state.isDistance2;
+        const isDistance3 = this.state.isDistance3;
         const isDistance4 = this.state.isDistance4;
 
         return (
@@ -220,10 +289,10 @@ class RestaurantFilter extends Component {
                     </View>
 
                     <View style = {{flexDirection:'row', marginTop:30}}>
-                        <TouchableOpacity onPress = {this._onPressClear} style = {styles.clearButton}>
+                        <TouchableOpacity onPress = {this.props.doneButtonPressed} style = {styles.clearButton}>
                             <Text style = {styles.textButton_unselected}>Clear</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress = {this._onPressApply} style = {styles.applyButton}>
+                        <TouchableOpacity onPress = {this.props.doneButtonPressed} style = {styles.applyButton}>
                             <Text style = {styles.textButton_selected}>Apply</Text>
                         </TouchableOpacity>
                     </View>
